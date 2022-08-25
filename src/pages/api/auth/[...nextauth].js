@@ -1,13 +1,13 @@
-import NextAuth from 'next-auth';
-import FacebookProvider from 'next-auth/providers/facebook';
-import GoogleProvider from 'next-auth/providers/google';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { db } from '../../../utils/db.server';
-import { z } from 'zod';
-import bcrypt from 'bcrypt';
+import NextAuth from 'next-auth'
+import FacebookProvider from 'next-auth/providers/facebook'
+import GoogleProvider from 'next-auth/providers/google'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { db } from '../../../utils/db.server'
+import { z } from 'zod'
+import bcrypt from 'bcrypt'
 
-export default NextAuth({
+export const authOptions = {
    session: {
       strategy: 'jwt',
    },
@@ -18,9 +18,9 @@ export default NextAuth({
       callbacks: {
          session({ session, user }) {
             if (session.user) {
-               session.user.id = user.id;
+               session.user.id = user.id
             }
-            return session;
+            return session
          },
       },
    },
@@ -37,10 +37,10 @@ export default NextAuth({
       CredentialsProvider({
          _name: 'Sign in',
          get name() {
-            return this._name;
+            return this._name
          },
          set name(value) {
-            this._name = value;
+            this._name = value
          },
          credentials: {
             username: {
@@ -54,25 +54,27 @@ export default NextAuth({
             const Credentials = z.object({
                email: z.string().email(),
                password: z.string(),
-            });
+            })
 
-            const parsedCredentials = Credentials.parse(credentials);
+            const parsedCredentials = Credentials.parse(credentials)
 
             const user = await db.user.findUnique({
                where: {
                   email: parsedCredentials.email,
                },
-            });
+            })
 
-            if (!user) return null;
+            if (!user) return null
 
             // compare hashed+stored password to entered password
             if (!bcrypt.compareSync(parsedCredentials.password, user.password))
-               return null;
+               return null
 
             // user logged in, return session
-            return user;
+            return user
          },
       }),
    ],
-});
+}
+
+export default NextAuth(authOptions)
