@@ -1,5 +1,6 @@
-import React from 'react'
+import Link from 'next/link'
 import { Icon } from '@iconify/react'
+
 
 const Header = () => {
    return (
@@ -8,7 +9,7 @@ const Header = () => {
             <div className="absolute left-3">
                <Icon icon="charm:menu-hamburger" />
             </div>
-            <Link to="/">
+            <Link href="/">
                <img
                   className="w-32"
                   src="/images/terra-logo.svg"
