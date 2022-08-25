@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import { Title } from '../components/Title'
 
-export function Donate() {
+export default function Donate() {
    return (
       <>
          <Header />
