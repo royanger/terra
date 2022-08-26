@@ -1,22 +1,26 @@
 import className from 'classnames'
-import { LongArrowIcon } from './LongArrowIcon'
+import { AngledArrow } from './icons/AngledArrow'
+import { LongArrowIcon } from './icons/LongArrowIcon'
 
 export const Button = ({ variant, children }) => {
    const buttonCSS = {
-      primary: 'bg-secondary hover:bg-tertiary hover:text-white',
+      primary:
+         'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       secondary:
-         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white',
+         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       questionnaire:
-         'border-[1px] border-primary hover:bg-primary hover:text-white',
-      primaryShort: 'bg-secondary hover:bg-tertiary hover:text-white',
+         'border-[1px] border-black hover:border-primary hover:bg-primary hover:text-white py-[11px]',
+      primaryShort:
+         'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%] w-[100px]',
       secondaryShort:
-         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white',
-      donate: 'bg-secondary hover:bg-tertiary hover:text-white',
-      modal: 'bg-secondary hover:bg-tertiary hover:text-white',
-      left: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white',
-      right: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white',
-      modalleft: 'bg-secondary hover:bg-tertiary hover:text-white',
-      modalright: 'bg-secondary hover:bg-tertiary hover:text-white',
+         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]  w-[100x]',
+      donate:
+         'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
+      modal: 'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
+      left: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5',
+      right: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5',
+      modalleft: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
+      modalright: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
    }
 
    const buttonVariants = [
@@ -40,6 +44,19 @@ export const Button = ({ variant, children }) => {
    let content
 
    switch (ButtonComponent) {
+      case 'donate':
+         content = (
+            <>
+               {children}
+               {/* <img
+                  className="hover:text-white"
+                  alt="Open new tab"
+                  src="/images/icons/angled-arrow.svg"
+               /> */}
+               <AngledArrow className="h-6 ml-3" />
+            </>
+         )
+         break
       case 'left':
          content = (
             <>
@@ -81,14 +98,14 @@ export const Button = ({ variant, children }) => {
    return (
       <>
          <div className="w-full ">
-            <ButtonComponent
+            <button
                className={className(
-                  'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat font-semibold',
+                  'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat',
                   buttonCSS[ButtonComponent]
                )}
             >
                {content}
-            </ButtonComponent>
+            </button>
          </div>
       </>
    )

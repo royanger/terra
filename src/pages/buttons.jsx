@@ -23,7 +23,7 @@ export default function ButtonStyles() {
                <Button variant="questionnaire">Questionnaire</Button>
                <p>Questionnaire</p>
             </div>
-            <div className="grid grid-cols-2 gap-x-3.5 mb-2">
+            <div className="grid grid-cols-2 gap-x-3 mb-2">
                <Button variant="primaryShort">Next</Button>
                <Button variant="secondaryShort">Back</Button>
             </div>
@@ -32,7 +32,9 @@ export default function ButtonStyles() {
             </div>
 
             <div className="mb-8">
-               <Button variant="date">Donate</Button>
+               <div className="bg-primary px-7 py-4">
+                  <Button variant="donate">Donate</Button>
+               </div>
                <p>Donate button</p>
             </div>
 
@@ -40,14 +42,14 @@ export default function ButtonStyles() {
                <Button variant="modal">Modal</Button>
                <p>Modal Primary</p>
             </div>
-            <div className="grid grid-cols-2 gap-x-3.5 mb-2">
+            <div className="grid grid-cols-2 gap-x-3 mb-2">
                <Button variant="left">Back</Button>
                <Button variant="right">Forward</Button>
             </div>
             <div className="mb-8">
                <p>Primary Left and Primary Right</p>
             </div>
-            <div className="grid grid-cols-2 gap-x-3.5 mb-2">
+            <div className="grid grid-cols-2 gap-x-11 mb-2">
                <Button variant="modalLeft">Back</Button>
                <Button variant="modalRight">Forward</Button>
             </div>
