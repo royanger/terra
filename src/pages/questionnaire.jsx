@@ -1,9 +1,9 @@
 import * as React from 'react'
+import { Title } from '../components/Title'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { Layout } from '../components/ui/Layout'
-import { Title } from '../components/Title'
 
 // update id/name of questions on 4th page
 // add testing logic to 3rd and 4th page
@@ -29,12 +29,14 @@ function Survey1({ register, getValues, setStep }) {
    return (
       <>
          <div className="">
-            <Title variant="h1">Hi, Roy!</Title>
+            <Title variant="h1" className="mt-2">
+               Hi, Roy!
+            </Title>
             <Title variant="h2" className="mt-2">
                Before we begin, we'd like to ask a few questions on food waste.
             </Title>
-            <p>How often do you go grocery shopping?</p>
-            <div className="form-control">
+            <p className="mt-7">How often do you go grocery shopping?</p>
+            <div className="form-control mt-4">
                <label className="border-[1px] border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Once a day
@@ -87,7 +89,7 @@ function Survey1({ register, getValues, setStep }) {
                   <p className="text-red">{error}</p>{' '}
                </div>
             )}
-            <button type="button" onClick={handleClick}>
+            <button type="button" className="mt-9" onClick={handleClick}>
                Next
             </button>
          </div>
@@ -115,13 +117,13 @@ function Survey2({ register, getValues, setStep }) {
    return (
       <>
          <div className="">
-            <div className="font-montserrat">
+            <div className="font-montserrat mt-16">
                <p>
                   How much food would you say that your household usually throws
                   away each week?
                </p>
             </div>
-            <div className="form-control">
+            <div className="form-control mt-4">
                <label className="border-[1px] border-black py-2 px-5 rounded-full mt-4">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      An excessive amount
@@ -186,7 +188,7 @@ function Survey2({ register, getValues, setStep }) {
                   <p className="text-red">{error}</p>{' '}
                </div>
             )}
-            <button type="button" onClick={handleClick}>
+            <button type="button" className="mt-20" onClick={handleClick}>
                Next
             </button>
          </div>
@@ -206,7 +208,7 @@ function Survey3({ register, getValues, setStep }) {
    return (
       <>
          <div className="">
-            <div className="font-montserrat mt-2">
+            <div className="font-montserrat mt-20">
                <p>
                   How would you personally rate yourself at managing food waste,
                   1 being poor and 10 being “I'm a master”? Use the slider to
@@ -214,7 +216,7 @@ function Survey3({ register, getValues, setStep }) {
                </p>
             </div>
             <div className="form-control">
-               <div className="mt-6">
+               <div className="mt-5">
                   <input
                      type="range"
                      min="1"
@@ -233,12 +235,12 @@ function Survey3({ register, getValues, setStep }) {
                   <span>10</span>
                </div>
                <div>
-                  <p className="mt-12 font-montserrat">
+                  <p className="mt-16 font-montserrat">
                      What food item do you find gets wasted most often in your
                      household?
                   </p>
                </div>
-               <div className="mt-2 font-montserrat">
+               <div className="mt-3 font-montserrat">
                   <p>Input anything</p>
                </div>
                <div className="form-control">
@@ -255,7 +257,7 @@ function Survey3({ register, getValues, setStep }) {
                   <p className="text-red">{error}</p>{' '}
                </div>
             )}
-            <button type="button" onClick={handleClick}>
+            <button type="button" className="mt-20" onClick={handleClick}>
                Next
             </button>
          </div>
@@ -267,84 +269,83 @@ function Survey4({ register, getValues, setStep }) {
    const [error, setError] = React.useState('')
    const handleClick = () => {
       if (
-         getValues('ans1') ||
-         getValues('ans2') ||
-         getValues('ans3') ||
-         getValues('ans4') ||
-         getValues('ans5') ||
-         getValues('ans6')
+         Object.entries(getValues())
+            .filter(item => item[0].match(/pg4-*/))
+            .filter(item => item[1]).length > 0
       ) {
          setStep(5)
-         console.log('done')
+      } else {
+         setError('You must select at least 1 item.')
       }
-      setError('You did not select a option')
    }
    return (
       <>
          <div className="">
-            <Title variant="h1">Last Question!</Title>
-            <div className="font-montserrat mt-4">
+            <Title variant="h1" className="mt-16">
+               Last Question!
+            </Title>
+            <div className="font-montserrat mt-3">
                <p>
                   Select all that apply: Which of these actions are you
                   currently doing at home?
                </p>
             </div>
             <div className="form-control">
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-6">
                   <input
                      type="checkbox"
+                     {...register('pg4-checkFridge')}
                      className="checkbox checkbox-primary"
-                     {...register('ans1')}
                   />
                   <span className="label-text font-montserrat ml-3">
                      Checking the fridge/freezer/pantry before shopping
                   </span>
                </label>
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-5">
                   <input
                      type="checkbox"
+                     {...register('pg4-mealPlan')}
                      className="checkbox checkbox-primary"
-                     {...register('ans2')}
                   />
-                  <span className="label-text font-montserrat ml-3 ">
+                  <span className="label-text font-montserrat ml-3">
                      Writing a meal plan
                   </span>
                </label>
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-5">
                   <input
                      type="checkbox"
+                     {...register('pg4-shoppingList')}
                      className="checkbox checkbox-primary"
-                     {...register('ans3')}
                   />
                   <span className="label-text font-montserrat ml-3">
                      Writing a shopping list
                   </span>
                </label>
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-5">
                   <input
                      type="checkbox"
+                     {...register('pg4-buyOnlyNeeded')}
                      className="checkbox checkbox-primary"
-                     {...register('ans4')}
                   />
                   <span className="label-text font-montserrat ml-3">
                      Buying only what is needed
                   </span>
                </label>
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-5">
                   <input
                      type="checkbox"
+                     {...register('pg4-useByBeforeDate')}
                      className="checkbox checkbox-primary"
-                     {...register('ans5')}
                   />
                   <span className="label-text font-montserrat ml-3">
                      Check use by and best before dates
                   </span>
                </label>
-               <label className="label cursor-pointer justify-start">
+               <label className="label cursor-pointer justify-start mt-5">
                   <input
                      type="checkbox"
+                     {...register('pg4-portionSize')}
                      className="checkbox checkbox-primary"
-                     {...register('ans6')}
                   />
                   <span className="label-text font-montserrat ml-3">
                      Consider portion size
@@ -356,7 +357,7 @@ function Survey4({ register, getValues, setStep }) {
                   <p className="text-red">{error}</p>{' '}
                </div>
             )}
-            <button type="submit" onClick={handleClick}>
+            <button type="submit" className="mt-12" onClick={handleClick}>
                Finish
             </button>
          </div>
@@ -364,7 +365,7 @@ function Survey4({ register, getValues, setStep }) {
    )
 }
 
-export function FinishedSurvey() {
+function FinishedSurvey() {
    return (
       <>
          <img
