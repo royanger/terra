@@ -1,52 +1,75 @@
-import React, { useEffect, useState } from 'react';
-import FunFacts from '../components/FunFacts';
-import { Title } from '../components/Title';
-import { Layout } from '../components/ui/Layout';
+import React, { useEffect, useState } from 'react'
+import FunFacts from '../components/FunFacts'
+import { Title } from '../components/Title'
+import { Layout } from '../components/ui/Layout'
+import Link from 'next/link'
 
 export default function Dashboard() {
-   const [funFactDialogOpen, setFunFactDialogOpen] = useState(false);
-   const [funFactObj, setFunFactObj] = useState({});
+   const [funFactDialogOpen, setFunFactDialogOpen] = useState(false)
+   const [funFactObj, setFunFactObj] = useState({})
 
    useEffect(() => {
-      randomizeFact();
-   }, []);
+      randomizeFact()
+   }, [])
 
    const randomizeFact = () => {
-      setFunFactObj(funFactsDB[Math.floor(Math.random() * funFactsDB.length)]);
-   };
-   const { funFactMessage, funFactRef } = funFactObj;
+      setFunFactObj(funFactsDB[Math.floor(Math.random() * funFactsDB.length)])
+   }
+   const { funFactMessage, funFactRef } = funFactObj
 
    const funFactToggle = () => {
-      setFunFactDialogOpen(!funFactDialogOpen);
-   };
+      setFunFactDialogOpen(!funFactDialogOpen)
+   }
 
    return (
       <>
-         <Title variant='h1'>Welcome back, Jenny!</Title>
-         <Title variant='h2'>Some food for thought:</Title>
+         <Title variant="h1">Welcome back, Jenny!</Title>
+         <Title variant="h2">Some food for thought:</Title>
          <FunFacts
             funFactToggle={funFactToggle}
             funFactMessage={funFactMessage}
             funFactRef={funFactRef}
          />
-         <div className='flex items-center justify-center w-full'>
+         <div className="flex items-center justify-center w-full">
             <p onClick={randomizeFact}>Click on the fact to learn more</p>
          </div>
 
-         <Title variant='h2'>See any peculiar produce today?</Title>
+         <Title variant="h2">See any peculiar produce today?</Title>
          {/* refactor this */}
 
-         <div className='grid grid-cols-2'>
+         <div className="grid grid-cols-2">
             <div>
-               <img src='/images/mrterra/mr.t-pointing.svg' alt='globe' />
+               <img src="/images/mrterra/mr.t-pointing.svg" alt="globe" />
             </div>
             <div>
                Reveal Mr. Terra from the pile of food waste by taking a photo or
                uploading a peculiar produce from your album
             </div>
          </div>
+         <div>
+            <ul>
+               <li>
+                  <Title variant="h2">Menu</Title>
+               </li>
+               <li>
+                  <Link href="/account">My Account</Link>
+               </li>
+               <li>
+                  <Link href="/donate">Donate</Link>
+               </li>
+               <li>
+                  <Link href="community">Community</Link>
+               </li>
+               <li>
+                  <Link href="harvest-board">Harvest Board</Link>
+               </li>
+               <li>
+                  <Link href="about-us">About Us</Link>
+               </li>
+            </ul>
+         </div>
       </>
-   );
+   )
 }
 
 Dashboard.getLayout = function getLayout(page) {
@@ -54,8 +77,8 @@ Dashboard.getLayout = function getLayout(page) {
       <>
          <Layout>{page}</Layout>
       </>
-   );
-};
+   )
+}
 
 const funFactsDB = [
    {
@@ -101,4 +124,4 @@ const funFactsDB = [
       funFactLink:
          'https://www.oneplanetnetwork.org/sites/default/files/wwf_food_waste_and_loss_final.pdf',
    },
-];
+]

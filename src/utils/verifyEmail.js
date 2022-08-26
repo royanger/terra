@@ -1,12 +1,12 @@
-import Mailjet from 'node-mailjet';
+import Mailjet from 'node-mailjet'
 
 export const verifyEmail = (email, name, code) => {
    const mailjet = new Mailjet({
       apiKey: process.env.MAILJET_API_KEY,
       apiSecret: process.env.MAILJET_SECRET_KEY,
-   });
+   })
 
-   const verificationURL = `${process.env.API_URL}/auth/verify/${code}`;
+   const verificationURL = `${process.env.APP_URL}/auth/verify/${code}`
    const request = mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
          {
@@ -26,12 +26,12 @@ export const verifyEmail = (email, name, code) => {
             HTMLPart: `<h3>Verify Email</h3><p>Please use the following link to verify your email and finish creating your Terra account.</p><p><a href="${verificationURL}">${verificationURL}</a></p>`,
          },
       ],
-   });
+   })
    request
-      .then((result) => {
-         console.log(result.body);
+      .then(result => {
+         console.log(result.body)
       })
-      .catch((err) => {
-         console.log(err.statusCode);
-      });
-};
+      .catch(err => {
+         console.log(err.statusCode)
+      })
+}
