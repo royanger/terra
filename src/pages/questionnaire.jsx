@@ -396,7 +396,7 @@ export default function Questionnaire() {
    } = useForm()
 
    const surveyMutation = useMutation(data => {
-      return axios.post('http://localhost:3002/survey', data)
+      return axios.post(`${process.env.APP_URL}/survey'`, data)
    })
 
    const onSubmit = data => {
