@@ -1,6 +1,13 @@
-export const Error = ({ children }) => {
+import classNames from 'classnames'
+
+export const Error = ({ children, css }) => {
    return (
-      <p className="text-center text-error flex flex-row justify-center font-semibold">
+      <p
+         className={classNames(
+            'text-center text-error flex flex-row justify-center font-semibold',
+            css
+         )}
+      >
          {children}
       </p>
    )

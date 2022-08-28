@@ -2,7 +2,13 @@ import className from 'classnames'
 import { AngledArrow } from './icons/AngledArrow'
 import { LongArrowIcon } from './icons/LongArrowIcon'
 
-export const Button = ({ variant, children, css }) => {
+export const Button = ({
+   variant,
+   children,
+   css,
+   type = 'button',
+   onClick,
+}) => {
    const buttonCSS = {
       primary:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
@@ -96,6 +102,8 @@ export const Button = ({ variant, children, css }) => {
             buttonCSS[ButtonComponent],
             css
          )}
+         type={type}
+         onClick={onClick}
       >
          {content}
       </button>

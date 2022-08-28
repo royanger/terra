@@ -142,10 +142,10 @@ export default function Register() {
          {errors.password?.type === 'too_small' && (
             <Error>A Password of 10 characters or more is required</Error>
          )}
-         <div className="w-full flex flex-row justify-center relative mt-5">
+         <div className="w-full flex flex-row justify-center relative ">
             <Title
                variant="h3"
-               className="terra-or relative block w-full text-center"
+               className="terra-or relative block w-full text-center mt-5"
             >
                or
             </Title>

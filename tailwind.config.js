@@ -21,7 +21,10 @@ module.exports = {
          maxWidth: {
             sm: '390px',
          },
+         minWidth: {
+            sm: '398px',
+         },
       },
    },
    plugins: [require('daisyui')],
-};
+}
