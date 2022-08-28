@@ -20,6 +20,7 @@
    },
    "homepage": "https://github.com/royanger/terra#readme",
    "dependencies": {
+      "@hookform/resolvers": "^2.9.7",
       "@iconify/react": "^3.2.2",
       "@next-auth/prisma-adapter": "^1.0.4",
       "@prisma/client": "^4.2.1",

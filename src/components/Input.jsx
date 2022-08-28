@@ -4,23 +4,23 @@ export const Input = ({
    type,
    id,
    label,
-   required,
    register,
-   defaultValue,
-   customCSS,
+   placeholder,
+   className,
+   hideLabel,
 }) => {
    return (
       <div className="flex flex-col">
-         <label htmlFor={id}>{label}</label>
+         {!hideLabel && <label htmlFor={id}>{label}</label>}
 
          <input
             className={classNames(
-               'border-[1px] border-black rounded-full mt-2 py-2 px-7',
-               customCSS
+               'border-[1px] border-black rounded-full mt-2 py-2 px-7 focus:border-primary',
+               className
             )}
-            defaultValue={defaultValue}
+            placeholder={placeholder}
             type={type}
-            {...register(id, { required: required })}
+            {...register(id)}
          />
       </div>
    )
