@@ -24,7 +24,10 @@ export default function Register() {
       status: false,
       message: '',
    })
-   const [success, setSuccess] = React.useState({ status: false, email: '' })
+   const [success, setSuccess] = React.useState({
+      status: false,
+      email: '',
+   })
 
    const formSchema = z.object({
       email: z.string().email(),
@@ -43,7 +46,6 @@ export default function Register() {
       return axios
          .post('/api/auth/register', data)
          .then(res => {
-            console.log('res', res)
             setSuccess({ status: true, email: res.data.email })
          })
 
@@ -56,8 +58,7 @@ export default function Register() {
       signinMutation.mutate(data)
    }
 
-   if (success.status === true)
-      return <VerifyEmail email="royanger@gmail.com" />
+   if (success.status === true) return <VerifyEmail email={success.email} />
    return (
       <>
          <BackBreadcrumb href="/" />
@@ -68,7 +69,7 @@ export default function Register() {
                Create Account
             </Title>
          </div>
-         <Title variant="h2" className="mb-9">
+         <Title variant="h2" className="mb-9 text-center">
             Join your fellow Terrarians - it takes less than a minute!
          </Title>
          <form onSubmit={handleSubmit(onSubmit)}>

@@ -44,6 +44,10 @@
 
 /* Custom CSS */
 
+body {
+   font-family: 'Montserrat', sans-serif;
+}
+
 .terra-or:before,
 .terra-or:after {
    content: ' ';
