@@ -31,7 +31,12 @@ export default function Login({ providers }) {
       <>
          <BackBreadcrumb href="/" />
          <div className="mb-3 flex items-center justify-center w-full">
-            <Image alt="Sign In Image" src={loginImg} />
+            <Image
+               alt="Sign In Image"
+               src={loginImg}
+               width={209}
+               height={187}
+            />
          </div>
          <div className="flex flex-col items-center mt-3">
             <Title variant="h1" className="mt-2 mb-8">
@@ -113,7 +118,7 @@ export default function Login({ providers }) {
                                  })
                               }
                            >
-                              {provider.name}
+                              Continue with {provider.name}
                            </Button>
                         </div>
                      )
