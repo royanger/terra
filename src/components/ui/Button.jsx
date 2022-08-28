@@ -2,7 +2,7 @@ import className from 'classnames'
 import { AngledArrow } from './icons/AngledArrow'
 import { LongArrowIcon } from './icons/LongArrowIcon'
 
-export const Button = ({ variant, children }) => {
+export const Button = ({ variant, children, css }) => {
    const buttonCSS = {
       primary:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
@@ -48,11 +48,6 @@ export const Button = ({ variant, children }) => {
          content = (
             <>
                {children}
-               {/* <img
-                  className="hover:text-white"
-                  alt="Open new tab"
-                  src="/images/icons/angled-arrow.svg"
-               /> */}
                <AngledArrow className="h-6 ml-3" />
             </>
          )
@@ -94,19 +89,15 @@ export const Button = ({ variant, children }) => {
          break
    }
 
-   console.log('test', ButtonComponent)
    return (
-      <>
-         <div className="w-full ">
-            <button
-               className={className(
-                  'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat',
-                  buttonCSS[ButtonComponent]
-               )}
-            >
-               {content}
-            </button>
-         </div>
-      </>
+      <button
+         className={className(
+            'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat',
+            buttonCSS[ButtonComponent],
+            css
+         )}
+      >
+         {content}
+      </button>
    )
 }
