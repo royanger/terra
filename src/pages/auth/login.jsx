@@ -124,7 +124,7 @@ export default function Login({ providers }) {
                      )
                   })}
                <Title variant="h2" className="mt-8 mb-3">
-                  Don't have account?
+                  Don't have an account?
                </Title>
                <Link href="/auth/register" passHref>
                   <a className="w-full">

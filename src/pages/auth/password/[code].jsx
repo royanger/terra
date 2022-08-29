@@ -49,7 +49,9 @@ export default function UpdatePassword(props) {
    if (props.check === false) {
       return (
          <>
-            <p>This password reset appears to be invalid. Please try again.</p>
+            <p className="mt-12 text-center">
+               This password reset appears to be invalid. Please try again.
+            </p>
          </>
       )
    }

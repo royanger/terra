@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { getProviders, signIn } from 'next-auth/react'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import Link from 'next/link'
@@ -19,7 +20,7 @@ import createAccountImg from '../../../public/images/illustrations/create-acc-pr
 import { BackBreadcrumb } from '../../components/ui/BackBreadcrumb'
 import { VerifyEmail } from '../../components/VerifyEmail'
 
-export default function Register() {
+export default function Register({ providers }) {
    const [error, setError] = React.useState({
       status: false,
       message: '',
@@ -130,7 +131,7 @@ export default function Register() {
                className="mb-5"
             />
 
-            <Button variant="primary" css="mb-5">
+            <Button variant="primary" css="mb-5" type="submit">
                Create Account
             </Button>
          </form>
@@ -143,7 +144,7 @@ export default function Register() {
          {errors.password?.type === 'too_small' && (
             <Error>A Password of 10 characters or more is required</Error>
          )}
-         <div className="w-full flex flex-row justify-center relative ">
+         <div className="w-full flex flex-row justify-center relative mb-4">
             <Title
                variant="h3"
                className="terra-or relative block w-full text-center mt-5"
@@ -151,13 +152,26 @@ export default function Register() {
                or
             </Title>
          </div>
-         <Button variant="secondary" css="my-4">
-            Continue with Google
-         </Button>
-         <Button variant="secondary" css="mb-12">
-            Continue with Facebook
-         </Button>
-         <div className="flex flex-row justify-center">
+         {Object.values(providers)
+            .filter(provider => provider.id !== 'credentials')
+            .map(provider => {
+               return (
+                  <div key={provider.id} className="w-full mb-4">
+                     <Button
+                        type="submit"
+                        variant="secondary"
+                        onClick={() =>
+                           signIn(provider.id, {
+                              callbackUrl: '/dashboard',
+                           })
+                        }
+                     >
+                        Continue with {provider.name}
+                     </Button>
+                  </div>
+               )
+            })}
+         <div className="flex flex-row justify-center mt-8">
             <p>
                Have an account?{' '}
                <Link href="/auth/login">
@@ -167,6 +181,10 @@ export default function Register() {
          </div>
       </>
    )
+}
+
+export async function getServerSideProps() {
+   return { props: { providers: await getProviders() } }
 }
 
 Register.getLayout = function getLayout(page) {

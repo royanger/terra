@@ -85,7 +85,7 @@ export default function ResetPassword() {
                      hideLabel={true}
                      className="mb-4"
                   />
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" className="mb-5">
                      Submit
                   </Button>
                </form>
