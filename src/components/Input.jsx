@@ -15,7 +15,7 @@ export const Input = ({
 
          <input
             className={classNames(
-               'border-[1px] border-black rounded-full py-2 px-7 focus:outline-none focus:border-primary focus:border-2 focus:mt-[6px]',
+               'border-[1px] border-black rounded-full py-2 px-7 focus:outline-none focus:border-primary',
                className
             )}
             placeholder={placeholder}

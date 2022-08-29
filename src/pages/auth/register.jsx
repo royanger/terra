@@ -59,6 +59,7 @@ export default function Register() {
    }
 
    if (success.status === true) return <VerifyEmail email={success.email} />
+
    return (
       <>
          <BackBreadcrumb href="/" />

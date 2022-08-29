@@ -98,7 +98,7 @@ export const Button = ({
    return (
       <button
          className={className(
-            'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat',
+            'rounded-full py-2 px-3 w-full flex items-center justify-center font-montserrat focus:outline-none',
             buttonCSS[ButtonComponent],
             css
          )}

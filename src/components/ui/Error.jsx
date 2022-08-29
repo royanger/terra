@@ -4,7 +4,7 @@ export const Error = ({ children, css }) => {
    return (
       <p
          className={classNames(
-            'text-center text-error flex flex-row justify-center font-semibold',
+            'text-center text-error flex flex-col items-center font-semibold',
             css
          )}
       >

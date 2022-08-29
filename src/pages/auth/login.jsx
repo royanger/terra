@@ -92,7 +92,7 @@ export default function Login({ providers }) {
                   )}
                </div>
                <div className="mb-8">
-                  <Link href="/auth/resetpassword">
+                  <Link href="/auth/password/reset">
                      <a className="font-bold underline">Forgot Password?</a>
                   </Link>
                </div>

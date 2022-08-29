@@ -67,11 +67,7 @@ export default async function handler(req, res) {
    })
 
    // send verification email
-   const email = await verifyEmail(
-      parsedProfile.email,
-      parsedProfile.name,
-      verificationToken
-   )
+   await verifyEmail(parsedProfile.email, parsedProfile.name, verificationToken)
 
    res.status(200).json({
       message: 'User created and verification email sent',
