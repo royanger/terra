@@ -3,6 +3,9 @@
 # Next
 .next
 
+# Assets
+images.zip
+
 # dependencies
 /node_modules
 /api/node_modules

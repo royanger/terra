@@ -45,6 +45,7 @@ model User {
   accounts        Account[]
   sessions        Session[]
   token           Verification[]
+  reset           Reset[]
 }
 
 model Verification {
@@ -52,4 +53,11 @@ model Verification {
   token        String   @unique
   userId       String
   user         User     @relation(fields: [userId], references: [id])
+}
+
+model Reset {
+   id          String   @id @default(cuid())
+   code        String   @unique
+   userId       String
+   user         User     @relation(fields: [userId], references: [id])
 }

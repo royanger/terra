@@ -1,5 +1,6 @@
-import Header from '../components/Header'
+import Header from '../components/layout/Header'
 import { Title } from '../components/Title'
+import { Layout } from '../components/ui/Layout'
 
 export default function Donate() {
    return (
@@ -37,6 +38,14 @@ export default function Donate() {
             className="w-[326px]"
             alt="Donation info"
          />
+      </>
+   )
+}
+
+Donate.getLayout = function getLayout(page) {
+   return (
+      <>
+         <Layout>{page}</Layout>
       </>
    )
 }
