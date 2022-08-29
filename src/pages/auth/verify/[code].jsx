@@ -15,7 +15,7 @@ export default function Verify(props) {
       return (
          <>
             <BackBreadcrumb href="/auth/login" />
-            <div className="w-full flex justify-center mb-11">
+            <div className="w-full flex justify-center mb-2">
                <Image alt="Password Reset" src={successImg} />
             </div>
             <div className="w-full flex flex-col items-center mb-4">
@@ -39,7 +39,10 @@ export default function Verify(props) {
             <div className="w-full flex justify-center mb-11">
                <Image alt="Password Reset" src={successImg} />
             </div>
-            <div className="w-full flex flex-col items-center mb-4">
+            <div
+               className="w-full flex flex-col items-center mb-4
+            "
+            >
                <Title variant="h1" className="text-primary">
                   Woo hoo!
                </Title>
