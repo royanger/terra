@@ -1,4 +1,4 @@
-export const Loader = ({ ratio }) => {
+export const Loader = ({ ratio, color = '#35572F' }) => {
    const newSize = ratio / 100
    console.log('newSize', newSize)
    const cssValues = {
@@ -11,7 +11,7 @@ export const Loader = ({ ratio }) => {
             className="terra-ring"
             role="alert"
             aria-live="assertive"
-            style={{ '--rts-color': '#35572F' }}
+            style={{ '--rts-color': color }}
          >
             <div className="inline-block relative" style={cssValues}>
                <p className="sr-only" aria-hidden="false">
