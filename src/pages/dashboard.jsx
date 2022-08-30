@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import FunFacts from '../components/FunFacts'
-import { Title } from '../components/Title'
-import { Layout } from '../components/ui/Layout'
+import { FunFacts } from '@/components/FunFacts'
+import { Title } from '@/components/Title'
+import { Layout } from '@/components/ui/Layout'
 import Link from 'next/link'
 
 export default function Dashboard() {

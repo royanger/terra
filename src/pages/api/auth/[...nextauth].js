@@ -3,7 +3,7 @@ import FacebookProvider from 'next-auth/providers/facebook'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { db } from '../../../utils/db.server'
+import { db } from '@/utils/db.server'
 import { z } from 'zod'
 import bcrypt from 'bcrypt'
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import backIcon from '../../../public/images/icons/back-arrow.svg'
+import backIcon from '@/images/icons/back-arrow.svg'
 
 export const BackBreadcrumb = ({ href }) => {
    return (

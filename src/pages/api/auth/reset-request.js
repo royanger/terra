@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { db } from '../../../utils/db.server'
+import { db } from '@/utils/db.server'
 import { v4 as uuidv4 } from 'uuid'
-import { resetEmail } from '../../../utils/resetEmail'
+import { resetEmail } from '@/utils/resetEmail'
 
 export default async function handler(req, res) {
    // validate incoming email
@@ -58,7 +58,6 @@ export default async function handler(req, res) {
    // send verification email
    await resetEmail(parsedData.email, resetCode)
 
-   console.log('good')
    return res.status(200).json({
       type: 'ResetOk',
       message: 'Reset email sent',

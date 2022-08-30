@@ -1,5 +1,5 @@
-import { Title } from '../components/Title'
-import { Layout } from '../components/ui/Layout'
+import { Title } from '@/components/Title'
+import { Layout } from '@/components/ui/Layout'
 
 export default function FourOhFour() {
    return (

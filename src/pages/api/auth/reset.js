@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import bcrypt from 'bcrypt'
-import { db } from '../../../utils/db.server'
+import { db } from '@/utils/db.server'
 
 export default async function handler(req, res) {
    // validate incoming data

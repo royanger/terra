@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { LoginComponent } from '../components/ui/login-btn'
-import { Title } from '../components/Title'
+import { LoginComponent } from '@/components/ui/login-btn'
+import { Title } from '@/components/Title'
 // import { useQuery } from '@tanstack/react-query';
 // import axios from 'axios';
-import { Header2 } from '../components/layout/Header2'
-import { Layout } from '../components/ui/Layout'
+import { Header } from '@/components/layout/Header'
+import { Layout } from '@/components/ui/Layout'
 import Link from 'next/link'
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
          </Head>
 
          <main>
-            <Header2 />
+            <Header />
             <Title variant="h1" className="text-primary">
                Replenish the earth, one grocery trip at a time.
             </Title>

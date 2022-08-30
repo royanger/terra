@@ -8,17 +8,17 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { Header2 } from '../../components/layout/Header2'
-import { Input } from '../../components/Input'
-import { Title } from '../../components/Title'
-import { Layout } from '../../components/ui/Layout'
-import { Button } from '../../components/ui/Button'
-import { Footer } from '../../components/layout/Footer'
-import { Error } from '../../components/ui/Error'
+import { Header } from '@/components/layout/Header'
+import { Input } from '@/components/Input'
+import { Title } from '@/components/Title'
+import { Layout } from '@/components/ui/Layout'
+import { Button } from '@/components/ui/Button'
+import { Footer } from '@/components/layout/Footer'
+import { Error } from '@/components/ui/Error'
 
-import createAccountImg from '../../../public/images/illustrations/create-acc-produce.svg'
-import { BackBreadcrumb } from '../../components/ui/BackBreadcrumb'
-import { VerifyEmail } from '../../components/VerifyEmail'
+import createAccountImg from '@/images/illustrations/create-acc-produce.svg'
+import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
+import { VerifyEmail } from '@/components/VerifyEmail'
 
 export default function Register({ providers }) {
    const [error, setError] = React.useState({
@@ -191,7 +191,7 @@ Register.getLayout = function getLayout(page) {
    return (
       <>
          <Layout>
-            <Header2 />
+            <Header />
             {page}
             <Footer />
          </Layout>
