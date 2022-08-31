@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
 import { authOptions } from './api/auth/[...nextauth]'
 import { unstable_getServerSession as getServerSession } from 'next-auth'
 import { useHydratedSession } from '../utils/customHooks'
@@ -22,6 +22,7 @@ import coinIMG from '../../public/images/illustrations/home-acc-community-coin.s
 
 export default function Dashboard({ facts }) {
    const session = useHydratedSession()
+   const [showModal, setShowModal] = React.useState(false)
 
    return (
       <>
@@ -32,7 +33,7 @@ export default function Dashboard({ facts }) {
             Some food for thought:
          </Title>
          <div className="px-8">
-            <FunFacts data={facts} />
+            <FunFacts data={facts} setShowModal={setShowModal} />
          </div>
 
          <div
