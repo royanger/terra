@@ -11,11 +11,11 @@ import { Header } from '../../../components/layout/Header'
 import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
 import { Layout } from '../../../components/layout/Layout'
 import { db } from '../../../utils/db.server'
-import resetImg from '../../../images/illustrations/forgot-pw-phone.svg'
 import { Title } from '../../../components/Title'
 import { Input } from '../../../components/Input'
 import { Button } from '../../../components/ui/Button'
 import { Error } from '../../../components/ui/Error'
+import resetImg from '../../../../public/images/illustrations/forgot-pw-phone.svg'
 import successImg from '../../../../public/images/mrterra/mr.t-jumping.svg'
 
 export default function UpdatePassword(props) {

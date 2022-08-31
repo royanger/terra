@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import bcrypt from 'bcrypt'
 import { v4 as uuidv4 } from 'uuid'
-import { db } from '../../../../../../utils/db.server'
+import { db } from '../../../utils/db.server'
 import { verifyEmail } from '../../../utils/verifyEmail'
 
 const Profile = z.object({

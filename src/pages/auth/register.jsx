@@ -15,10 +15,10 @@ import { Layout } from '../../components/layout/Layout'
 import { Button } from '../../components/ui/Button'
 import { Footer } from '../../components/layout/Footer'
 import { Error } from '../../components/ui/Error'
+import { BackBreadcrumb } from '../../components/ui/BackBreadcrumb'
+import { VerifyEmail } from '../../components/VerifyEmail'
 
 import createAccountImg from '../../../public/images/illustrations/create-acc-produce.svg'
-import { BackBreadcrumb } from '../../../public/components/ui/BackBreadcrumb'
-import { VerifyEmail } from '../../../public/components/VerifyEmail'
 
 export default function Register({ providers }) {
    const [error, setError] = React.useState({
