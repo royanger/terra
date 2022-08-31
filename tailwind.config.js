@@ -10,6 +10,7 @@ module.exports = {
             black: '#000000',
             gray: '#DEDEDE',
             red: '#FF0000',
+            tan: '#FFF5DC',
          },
          fontFamily: {
             epilogue: ['Epilogue', 'sans-serif'],

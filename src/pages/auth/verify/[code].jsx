@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Layout } from '@/components/ui/Layout'
+import { Layout } from '@/components/layouts/Layout'
 import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/ui/Button'

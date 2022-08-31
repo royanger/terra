@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Layout } from '@/components/ui/Layout'
+import { Layout } from '@/components/layout/Layout'
 import { Header } from '@/components/layout/Header'
 import { Title } from '@/components/Title'
 import { AuthInput } from '@/components/AuthInput'

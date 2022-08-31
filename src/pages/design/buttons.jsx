@@ -1,6 +1,6 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/ui/Button'
-import { Layout } from '@/components/ui/Layout'
+import { Layout } from '@/components/layout/Layout'
 
 export default function ButtonStyles() {
    return (

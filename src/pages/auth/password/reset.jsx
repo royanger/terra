@@ -11,7 +11,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/ui/Button'
-import { Layout } from '@/components/ui/Layout'
+import { Layout } from '@/components/layout/Layout'
 import { Error } from '@/components/ui/Error'
 import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
 
@@ -43,7 +43,6 @@ export default function ResetPassword() {
    const onSubmit = data => {
       resetMutation.mutate(data)
    }
-   // console.log('status', status?.)
 
    return (
       <>
