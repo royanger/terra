@@ -46,6 +46,7 @@ model User {
   sessions        Session[]
   token           Verification[]
   reset           Reset[]
+  readfact        ReadFact[]
 }
 
 model Verification {
@@ -60,4 +61,22 @@ model Reset {
    code        String   @unique
    userId       String
    user         User     @relation(fields: [userId], references: [id])
+}
+
+model Facts {
+   id          String   @id @default(cuid())
+   message     String
+   details     String
+   reference   String
+   href        String
+   readfact    ReadFact[]
+}
+
+model ReadFact {
+   id          String   @id @default(cuid())
+   factId      String
+   fact        Facts    @relation(fields:[factId], references: [id])
+   userId      String
+   user        User     @relation(fields:[userId], references: [id])
+
 }
