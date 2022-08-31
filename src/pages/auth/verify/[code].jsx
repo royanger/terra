@@ -1,14 +1,14 @@
 import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Layout } from '@/components/layouts/Layout'
-import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
-import { Title } from '@/components/Title'
-import { Button } from '@/components/ui/Button'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import successImg from '@/images/mrterra/mr.t-jumping.svg'
-import failImg from '@/images/mrterra/mr.t-saying-hi.svg'
+import { Layout } from '../../../components/layout/Layout'
+import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
+import { Title } from '../../../components/Title'
+import { Button } from '../../../components/ui/Button'
+import { Header } from '../../../components/layout/Header'
+import { Footer } from '../../../components/layout/Footer'
+import successImg from '../../../../public/images/mrterra/mr.t-jumping.svg'
+import failImg from '../../../../public/images/mrterra/mr.t-saying-hi.svg'
 
 export default function Verify(props) {
    if (props.type === 'error') {

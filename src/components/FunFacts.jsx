@@ -1,5 +1,5 @@
 import * as React from 'react'
-import foodForThoughBGIMG from '@/images/images/home-food-for-thought-bg-optimized.jpg'
+import foodForThoughBGIMG from '../../public/images/images/home-food-for-thought-bg-optimized.jpg'
 import { Button } from './ui/Button'
 
 export const FunFacts = ({ data }) => {

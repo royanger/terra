@@ -4,16 +4,16 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Layout } from '@/components/layout/Layout'
-import { Header } from '@/components/layout/Header'
-import { Title } from '@/components/Title'
-import { AuthInput } from '@/components/AuthInput'
-import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/ui/Button'
-import { Error } from '@/components/ui/Error'
+import { Layout } from '../../components/layout/Layout'
+import { Header } from '../../components/layout/Header'
+import { Title } from '../../components/Title'
+import { AuthInput } from '../../components/AuthInput'
+import { Footer } from '../../components/layout/Footer'
+import { Button } from '../../components/ui/Button'
+import { Error } from '../../components/ui/Error'
+import { BackBreadcrumb } from '../../components/ui/BackBreadcrumb'
 
-import loginImg from '@/images/illustrations/sign-in-torso.svg'
-import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
+import loginImg from '../../../public/images/illustrations/sign-in-torso.svg'
 
 export default function Login({ providers }) {
    const [emailError, setEmailError] = React.useState({})

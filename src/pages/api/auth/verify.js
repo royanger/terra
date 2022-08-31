@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { db } from '@/utils/db.server'
+import { db } from '../../../utils/db.server'
 
 export default async function handler(req, res) {
    // validate incoming verification code - should be uuid
