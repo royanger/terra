@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { Title } from '../../components/Title'
-import { Button } from '../../components/ui/Button'
-import { Loader } from '../../components/ui/Loader'
+import { Title } from '@/components/Title'
+import { Button } from '@/components/ui/Button'
+import { Loader } from '@/components/ui/Loader'
 
 export default function Design() {
    return (

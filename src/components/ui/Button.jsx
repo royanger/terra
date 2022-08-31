@@ -23,8 +23,8 @@ export const Button = ({
       donate:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       modal: 'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
-      left: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5',
-      right: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5',
+      left: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
+      right: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
       modalleft: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
       modalright: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
    }

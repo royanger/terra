@@ -1,5 +1,5 @@
-import { Title } from '../components/Title'
-import { Layout } from '../components/ui/Layout'
+import { Title } from '@/components/Title'
+import { Layout } from '@/components/layout/Layout'
 
 export default function Community() {
    return (

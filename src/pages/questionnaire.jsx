@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
-import { Layout } from '../components/ui/Layout'
+import { Layout } from '../components/layout/Layout'
 import { Title } from '../components/Title'
 
 // update id/name of questions on 4th page

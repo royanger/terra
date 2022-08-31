@@ -1,24 +1,22 @@
+import React from 'react'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 
-
-const Header = () => {
+export const Header = () => {
    return (
       <>
-         <div className="flex items-center justify-center">
+         <div className="flex items-center justify-center relative">
             <div className="absolute left-3">
-               <Icon icon="charm:menu-hamburger" />
+               <Icon icon="charm:menu-hamburger" className="w-6 h-6" />
             </div>
             <Link href="/">
                <img
-                  className="w-32"
                   src="/images/terra-logo.svg"
-                  alt="Teerra Logo"
+                  alt="Terra"
+                  className="w-logo"
                />
             </Link>
          </div>
       </>
    )
 }
-
-export default Header

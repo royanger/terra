@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../../public/images/terra-logo.svg'
+import logo from '@/images/terra-logo.svg'
 
 export const Footer = () => {
    return (

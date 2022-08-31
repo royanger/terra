@@ -6,17 +6,17 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useMutation } from '@tanstack/react-query'
-import { Footer } from '../../../components/layout/Footer'
-import { Header2 } from '../../../components/layout/Header2'
-import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
-import { Layout } from '../../../components/ui/Layout'
-import { db } from '../../../utils/db.server'
-import resetImg from '../../../../public/images/illustrations/forgot-pw-phone.svg'
-import { Title } from '../../../components/Title'
-import { Input } from '../../../components/Input'
-import { Button } from '../../../components/ui/Button'
-import { Error } from '../../../components/ui/Error'
-import successImg from '../../../../public/images/mrterra/mr.t-jumping.svg'
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
+import { Layout } from '@/components/layout/Layout'
+import { db } from '@/utils/db.server'
+import resetImg from '@/images/illustrations/forgot-pw-phone.svg'
+import { Title } from '@/components/Title'
+import { Input } from '@/components/Input'
+import { Button } from '@/components/ui/Button'
+import { Error } from '@/components/ui/Error'
+import successImg from '@/images/mrterra/mr.t-jumping.svg'
 
 export default function UpdatePassword(props) {
    const [status, setStatus] = React.useState({})
@@ -41,7 +41,6 @@ export default function UpdatePassword(props) {
          })
 
          .catch(err => {
-            console.log('test?', err)
             setStatus({ result: 'error', message: err.response.data.message })
          })
    })
@@ -57,7 +56,6 @@ export default function UpdatePassword(props) {
    }
 
    const onSubmit = data => {
-      console.log('submitted', data)
       resetMutation.mutate(data)
    }
 
@@ -187,7 +185,7 @@ UpdatePassword.getLayout = function getLayout(page) {
    return (
       <>
          <Layout>
-            <Header2 />
+            <Header />
             {page}
             <Footer />
          </Layout>

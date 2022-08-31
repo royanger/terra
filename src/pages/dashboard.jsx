@@ -1,55 +1,147 @@
-import React, { useEffect, useState } from 'react'
-import FunFacts from '../components/FunFacts'
-import { Title } from '../components/Title'
-import { Layout } from '../components/ui/Layout'
+import * as React from 'react'
+import { authOptions } from './api/auth/[...nextauth]'
+import { unstable_getServerSession as getServerSession } from 'next-auth'
+import { useHydratedSession } from '@/utils/customHooks'
 import Link from 'next/link'
+import Image from 'next/image'
+import axios from 'axios'
 
-export default function Dashboard() {
-   const [funFactDialogOpen, setFunFactDialogOpen] = useState(false)
-   const [funFactObj, setFunFactObj] = useState({})
+import { FunFacts } from '@/components/FunFacts'
+import { Header } from '@/components/layout/Header'
+import { Title } from '@/components/Title'
+import { FullWidthLayout } from '@/components/layout/FullWidthLayout'
+import { Button } from '@/components/ui/Button'
 
-   useEffect(() => {
-      randomizeFact()
-   }, [])
+import bgGreenIMG from '@/images/backgrounds/home-green-bg.svg'
+import bgYellowIMG from '@/images/backgrounds/home-yellow-bg.svg'
+import mrTerraInWasteIMG from '@/images/mrterra/mr.t-in-waste.svg'
+import peculiarPeach from '@/images/images/onboarding-home-peculiar-peach.svg'
+import perfectPeach from '@/images/images/onboarding-home-perfect-peach.svg'
+import lemonIMG from '@/images/illustrations/home-lemon-rotated.svg'
+import coinIMG from '@/images/illustrations/home-acc-community-coin.svg'
+import { FunFactsModal } from '@/components/Modal/FunFactsModal'
 
-   const randomizeFact = () => {
-      setFunFactObj(funFactsDB[Math.floor(Math.random() * funFactsDB.length)])
-   }
-   const { funFactMessage, funFactRef } = funFactObj
-
-   const funFactToggle = () => {
-      setFunFactDialogOpen(!funFactDialogOpen)
-   }
+export default function Dashboard({ facts }) {
+   const session = useHydratedSession()
+   const [showModal, setShowModal] = React.useState(false)
 
    return (
       <>
-         <Title variant="h1">Welcome back, Jenny!</Title>
-         <Title variant="h2">Some food for thought:</Title>
-         <FunFacts
-            funFactToggle={funFactToggle}
-            funFactMessage={funFactMessage}
-            funFactRef={funFactRef}
-         />
-         <div className="flex items-center justify-center w-full">
-            <p onClick={randomizeFact}>Click on the fact to learn more</p>
+         <Title variant="h1" className="text-primary mt-5 px-8">
+            Welcome, {session?.user?.name}
+         </Title>
+         <Title variant="h2" className="mt-4 px-8">
+            Some food for thought:
+         </Title>
+         <div className="px-8">
+            <FunFacts data={facts} setShowModal={setShowModal} />
          </div>
 
-         <Title variant="h2">See any peculiar produce today?</Title>
-         {/* refactor this */}
+         <div
+            className="h-32 bg-contain bg-no-repeat bg-bottom"
+            style={{ backgroundImage: `url(${bgGreenIMG.src})` }}
+         ></div>
 
-         <div className="grid grid-cols-2">
-            <div>
-               <img src="/images/mrterra/mr.t-pointing.svg" alt="globe" />
-            </div>
-            <div>
-               Reveal Mr. Terra from the pile of food waste by taking a photo or
-               uploading a peculiar produce from your album
+         <div className="bg-primary text-white px-8 relative">
+            <Title variant="h2">See any peculiar produce today?</Title>
+            <p className="mt-3">
+               Save Mister Terra from the pile of waste by uploading a photo of
+               peculiar produce and earn a point!
+            </p>
+            <Link href="/upload">
+               <a>
+                  <Button variant="primary" css="mt-3">
+                     Upload Picture
+                  </Button>
+               </a>
+            </Link>
+            <div className="relative bottom-[-18px]">
+               <div className="flex justify-center">
+                  <Image
+                     alt="Mr. Terra stuck in waste"
+                     src={mrTerraInWasteIMG}
+                     height={177}
+                     width={269}
+                  />
+               </div>
             </div>
          </div>
+
+         <div
+            className="h-12 bg-contain bg-no-repeat bg-bottom bg-primary"
+            style={{ backgroundImage: `url(${bgYellowIMG.src})` }}
+         ></div>
+
+         <div className="px-8 bg-tan">
+            <Title variant="h2" className="pt-5">
+               You may ask... what makes produce “peculiar”?
+            </Title>
+            <p className="mt-6">
+               At Terra, we define “peculiar produce” as fruits and vegetable
+               that have obvious cosmetic quirks (odd shapes, blemishes,
+               scarring) and no clear signs of spoilage.
+            </p>
+            <div className="grid grid-cols-2 mt-6 pb-12">
+               <div className="flex flex-col items-center">
+                  <Image
+                     alt='"Perfect Peach"'
+                     src={perfectPeach}
+                     height={114}
+                     width={114}
+                  />
+                  <p>"Perfect" Peach</p>
+               </div>
+               <div className="flex flex-col items-center">
+                  <Image
+                     alt="Peculiar Peach"
+                     src={peculiarPeach}
+                     height={105}
+                     width={107}
+                  />
+                  <p>Peculiar Peach</p>
+               </div>
+            </div>
+         </div>
+         <div className="bg-tertiary text-white px-8 relative pb-8">
+            <Title variant="h2" className="pt-7">
+               Terra's Reward System{' '}
+            </Title>
+            <ul className="p-2">
+               <li className="grid grid-cols-8 items-center">
+                  <div className="mr-3 col-span-1 flex items-center justify-center">
+                     <Image alt="bullet" src={coinIMG} height={32} width={32} />
+                  </div>
+                  <p className="col-span-7">
+                     Upload photos of peculiar produce you bought.
+                  </p>
+               </li>
+
+               <li className="grid grid-cols-8 items-center">
+                  <div className="mr-3  col-span-1">
+                     <Image alt="bullet" src={coinIMG} height={32} width={32} />
+                  </div>
+                  <p className="col-span-7">
+                     Read external food waste articles.
+                  </p>
+               </li>
+               <li className="grid grid-cols-8 items-center">
+                  <div className="mr-3  col-span-1">
+                     <Image alt="bullet" src={coinIMG} height={32} width={32} />
+                  </div>
+                  <p className="col-span-7">
+                     Explore food rescue organizations.
+                  </p>
+               </li>
+            </ul>
+            <div className="absolute top-[-75px] right-0">
+               <Image alt="A peculiar lemon" src={lemonIMG} />
+            </div>
+         </div>
+
          <div>
-            <ul>
+            <ul className="mt-5">
                <li>
-                  <Title variant="h2">Menu</Title>
+                  <Title variant="h2">Menu asdf</Title>
                </li>
                <li>
                   <Link href="/account">My Account</Link>
@@ -75,53 +167,32 @@ export default function Dashboard() {
 Dashboard.getLayout = function getLayout(page) {
    return (
       <>
-         <Layout>{page}</Layout>
+         <FullWidthLayout>
+            <Header />
+            {page}
+         </FullWidthLayout>
       </>
    )
 }
 
-const funFactsDB = [
-   {
-      funFactMessage:
-         'Wasting food contributes to 10% of the world’s greenhouse gas emissions.*',
-      funFactRef: '* WWF',
-      funFactModalMessage:
-         'Food waste’s high emissions are largely due to food production using a huge amount of land, water and energy. An area the size of the Indian subcontinent (4.4m km2 ) and water volume equivalent to 304 million Olympic swimming pools are needed to produce food that never leaves the farm.',
-      funFactLink: 'https://www.nrdc.org/food-waste',
-   },
-   {
-      funFactMessage:
-         'Uneaten food equates to Americans throwing out as much as $218 billion each year.*',
-      funFactRef: '* NRDC',
-      funFactModalMessage:
-         "Between 2011-2012, some experts discovered that the US lost 15.4 billion dollars of retail food annually. Fruit losses, most of it perfectly good food, were around 12.3%-that's enough to feed 5.3 million people. They also found that US households were the most significant food wasters.",
-      funFactLink:
-         'https://www.nrdc.org/sites/default/files/food-waste-city-level-report.pdf',
-   },
-   {
-      funFactMessage:
-         'An average of 68% of all food discarded (as tracked in kitchen diaries) was potentially edible.*',
-      funFactRef: '* NRDC',
-      funFactModalMessage:
-         "A lot of the food we throw away is edible. Meanwhile, approximately 4-10% of food from kitchens in restaurants ends up as pre-consumer waste. For instance, McDonald's says its employees must dump all fries in the trash can after 7 minutes, while they must discard burgers after 20 mins.",
-      funFactLink:
-         'https://www.nrdc.org/sites/default/files/food-waste-city-level-report.pdf/updates.panda.org/driven-to-waste-report',
-   },
-   {
-      funFactMessage:
-         '14% of food produced is lost from the post-harvest stage up to, but excluding, the retail stage.*',
-      funFactRef: '* FAO',
-      funFactModalMessage:
-         "Fruits and vegetables usually suffer massive hits from food waste when compared to cereals and pulses on farms. Harvesting, poor handling, and inadequate storage contribute to on-farm storage losses. It's imperative to identify critical loss points to resolve these issues.",
-      funFactLink: ' https://www.fao.org/family-farming/detail/en/c/1245425/',
-   },
-   {
-      funFactMessage:
-         '44% of fruit and veggies end up as waste in South Africa, most wasted before reaching the supermarket.*',
-      funFactRef: '* WWF',
-      funFactModalMessage:
-         'Yearly, South Africa loses one-third of the 31 million tonnes of food produced locally. Fruit and vegetable wastage contribute a significant portion to the loss. Supermarket chains, restaurants, and the busy lifestyle of most South Africans play a considerable role in this trend.',
-      funFactLink:
-         'https://www.oneplanetnetwork.org/sites/default/files/wwf_food_waste_and_loss_final.pdf',
-   },
-]
+export async function getServerSideProps(context) {
+   const { data } = await axios.get(`http://localhost:3000/api/funfacts`)
+
+   const session = await getServerSession(context.req, context.res, authOptions)
+
+   if (!session) {
+      return {
+         redirect: {
+            permanent: false,
+            destination: `/auth/login`,
+         },
+      }
+   }
+
+   return {
+      props: {
+         session: session,
+         facts: data.facts,
+      },
+   }
+}

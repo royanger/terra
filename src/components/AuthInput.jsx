@@ -12,7 +12,6 @@ export const AuthInput = ({
 }) => {
    const checkValidity = e => {
       const { validity } = e.target
-      console.log('validity', validity, validity.valid, e.target.value)
       if (validity.valid) {
          setError()
       } else {

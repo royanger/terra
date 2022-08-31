@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Title } from './Title'
 import { BackBreadcrumb } from './ui/BackBreadcrumb'
-import verifyEmailImg from '../../public/images/illustrations/onboarding-email-verify.svg'
+import verifyEmailImg from '@/images/illustrations/onboarding-email-verify.svg'
 
 export const VerifyEmail = ({ email }) => {
    return (

@@ -1,5 +1,5 @@
-import { Layout } from '../../components/ui/Layout'
-import { Title } from '../../components/Title'
+import { Layout } from '@/components/layout/Layout'
+import { Title } from '@/components/Title'
 
 export default function FAQ() {
    return (
