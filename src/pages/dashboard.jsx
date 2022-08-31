@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
 import { authOptions } from './api/auth/[...nextauth]'
 import { unstable_getServerSession as getServerSession } from 'next-auth'
 import { useHydratedSession } from '@/utils/customHooks'
@@ -19,9 +19,11 @@ import peculiarPeach from '@/images/images/onboarding-home-peculiar-peach.svg'
 import perfectPeach from '@/images/images/onboarding-home-perfect-peach.svg'
 import lemonIMG from '@/images/illustrations/home-lemon-rotated.svg'
 import coinIMG from '@/images/illustrations/home-acc-community-coin.svg'
+import { FunFactsModal } from '@/components/Modal/FunFactsModal'
 
 export default function Dashboard({ facts }) {
    const session = useHydratedSession()
+   const [showModal, setShowModal] = React.useState(false)
 
    return (
       <>
@@ -32,7 +34,7 @@ export default function Dashboard({ facts }) {
             Some food for thought:
          </Title>
          <div className="px-8">
-            <FunFacts data={facts} />
+            <FunFacts data={facts} setShowModal={setShowModal} />
          </div>
 
          <div

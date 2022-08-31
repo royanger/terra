@@ -1,9 +1,11 @@
 import * as React from 'react'
 import foodForThoughBGIMG from '@/images/images/home-food-for-thought-bg-optimized.jpg'
 import { Button } from './ui/Button'
+import { FunFactsModal } from './Modal/FunFactsModal'
 
 export const FunFacts = ({ data }) => {
    const [currentFact, setCurrentFact] = React.useState(data[0])
+   const [showModal, setShowModal] = React.useState(false)
 
    // randomize fact on long -- prevent hydration error
    React.useEffect(() => {
@@ -28,11 +30,17 @@ export const FunFacts = ({ data }) => {
                      Read More
                   </div>
                   <div className="text-black col-span-2">
-                     <Button variant="right">Forward</Button>
+                     <Button variant="right" onClick={() => setShowModal(true)}>
+                        Forward
+                     </Button>
                   </div>
                </div>
             </div>
          </div>
+
+         {showModal && (
+            <FunFactsModal showModal={showModal} setShowModal={setShowModal} />
+         )}
       </>
    )
 }
