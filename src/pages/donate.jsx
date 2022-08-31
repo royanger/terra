@@ -1,4 +1,4 @@
-import Header from '../components/layout/Header'
+import { Header } from '../components/layout/Header'
 import { Title } from '../components/Title'
 import { Layout } from '../components/layout/Layout'
 
