@@ -7,14 +7,17 @@ import { Button } from '../ui/Button'
 import { Modal } from './Modal'
 import { Title } from '../Title'
 
-import successIMG from '../../../public/images/mrterra/mr.t-with-coin.svg'
+import congratsIMG from '../../../public/images/mrterra/congrats.gif'
 
 export const FunFactsModal = ({ href, description, id, setShowModal }) => {
    const session = useHydratedSession()
    const [clicked, setClicked] = React.useState(false)
 
    const pointMutation = useMutation(data => {
-      return apiClient.post('/api/points/article', { ...data })
+      return apiClient.post('/api/points/article', { ...data }).catch(err => {
+         setShowModal(false)
+         setClicked(false)
+      })
    })
 
    const handleClick = () => {
@@ -34,12 +37,12 @@ export const FunFactsModal = ({ href, description, id, setShowModal }) => {
          <Modal setShowModal={setShowModal}>
             <div className="">
                <div className="flex items-center justify-center mb-2">
-                  <Image src={successIMG} alt="You got an award!" />
+                  <Image src={congratsIMG} alt="You got an award!" />
                </div>
-               <Title variant="h1" className="text-primary">
+               <Title variant="h1" className="text-primary text-center">
                   Congratulations
                </Title>
-               <p className="mt-2">
+               <p className="mt-2 text-center">
                   Woo hoo, you've earned 1 point. Keep it up to rescue Mister
                   Terra from food waste!
                </p>

@@ -81,7 +81,7 @@ export default function Dashboard({ facts }) {
                scarring) and no clear signs of spoilage.
             </p>
             <div className="grid grid-cols-2 mt-6 pb-12">
-               <div className="flex flex-col items-center">
+               <div className="flex flex-col items-center justify-end">
                   <Image
                      alt='"Perfect Peach"'
                      src={perfectPeach}
@@ -90,7 +90,7 @@ export default function Dashboard({ facts }) {
                   />
                   <p>"Perfect" Peach</p>
                </div>
-               <div className="flex flex-col items-center">
+               <div className="flex flex-col items-center justify-end">
                   <Image
                      alt="Peculiar Peach"
                      src={peculiarPeach}
@@ -102,10 +102,10 @@ export default function Dashboard({ facts }) {
             </div>
          </div>
          <div className="bg-tertiary text-white px-8 relative pb-8">
-            <Title variant="h2" className="pt-7">
+            <Title variant="h2" className="pt-12">
                Terra's Reward System{' '}
             </Title>
-            <ul className="p-2">
+            <ul className="p-2 pl-0">
                <li className="grid grid-cols-8 items-center">
                   <div className="mr-3 col-span-1 flex items-center justify-center">
                      <Image alt="bullet" src={coinIMG} height={32} width={32} />
