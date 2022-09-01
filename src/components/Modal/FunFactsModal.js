@@ -40,7 +40,7 @@ export const FunFactsModal = ({ href, description, id, setShowModal }) => {
                   Congratulations
                </Title>
                <p className="mt-2">
-                  Woo hoo, you’ve earned 1 point. Keep it up to rescue Mister
+                  Woo hoo, you've earned 1 point. Keep it up to rescue Mister
                   Terra from food waste!
                </p>
                <Button

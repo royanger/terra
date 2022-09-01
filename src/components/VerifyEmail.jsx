@@ -13,7 +13,7 @@ export const VerifyEmail = ({ email }) => {
                Verify Email
             </Title>
             <p className="mb-32 text-center">
-               We’ve sent an email to <span className="font-bold">{email}</span>{' '}
+               We've sent an email to <span className="font-bold">{email}</span>{' '}
                to verify your account. Please check your email to finish setting
                up your Terra account!
             </p>

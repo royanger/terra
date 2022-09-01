@@ -65,7 +65,7 @@ export default function ResetPassword() {
          ) : (
             <>
                <p className="mb-4 text-center">
-                  Don’t worry! It happens. Please enter your email address
+                  Don't worry! It happens. Please enter your email address
                   associated with your account.
                </p>
                <form onSubmit={handleSubmit(onSubmit)}>
