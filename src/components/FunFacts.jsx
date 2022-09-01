@@ -1,5 +1,5 @@
 import * as React from 'react'
-import foodForThoughBGIMG from '@/images/images/home-food-for-thought-bg-optimized.jpg'
+import foodForThoughBGIMG from '../../public/images/images/home-food-for-thought-bg-optimized.jpg'
 import { Button } from './ui/Button'
 import { FunFactsModal } from './Modal/FunFactsModal'
 
@@ -39,7 +39,12 @@ export const FunFacts = ({ data }) => {
          </div>
 
          {showModal && (
-            <FunFactsModal showModal={showModal} setShowModal={setShowModal} />
+            <FunFactsModal
+               description={currentFact.details}
+               href={currentFact.href}
+               id={currentFact.id}
+               setShowModal={setShowModal}
+            />
          )}
       </>
    )

@@ -18,7 +18,7 @@ export const Modal = ({ children, setShowModal }) => {
    return (
       <ModalBase selector="portal2">
          <div className="w-screen h-screen bg-black bg-opacity-70 flex items-center justify-center absolute top-0 right-0 left-0 bottom-0">
-            <div className="bg-white rounded w-[300px] p-6">
+            <div className="bg-white w-[300px] p-6 rounded-3xl">
                <div className="flex justify-end">
                   <button onClick={() => setShowModal(false)}>
                      <Icon icon="eva:close-fill" className="w-8 h-8" />

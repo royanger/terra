@@ -6,16 +6,16 @@ import Image from 'next/image'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 
-import { Input } from '@/components/Input'
-import { Footer } from '@/components/layout/Footer'
-import { Header } from '@/components/layout/Header'
-import { Title } from '@/components/Title'
-import { Button } from '@/components/ui/Button'
-import { Layout } from '@/components/layout/Layout'
-import { Error } from '@/components/ui/Error'
-import { BackBreadcrumb } from '@/components/ui/BackBreadcrumb'
+import { Input } from '../../../components/Input'
+import { Footer } from '../../../components/layout/Footer'
+import { Header } from '../../../components/layout/Header'
+import { Title } from '../../../components/Title'
+import { Button } from '../../../components/ui/Button'
+import { Layout } from '../../../components/layout/Layout'
+import { Error } from '../../../components/ui/Error'
+import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
 
-import resetImg from '@/images/illustrations/forgot-pw-phone.svg'
+import resetImg from '../../../../public/images/illustrations/forgot-pw-phone.svg'
 export default function ResetPassword() {
    const [status, setStatus] = React.useState({})
    const formSchema = z.object({
@@ -65,7 +65,7 @@ export default function ResetPassword() {
          ) : (
             <>
                <p className="mb-4 text-center">
-                  Don’t worry! It happens. Please enter your email address
+                  Don't worry! It happens. Please enter your email address
                   associated with your account.
                </p>
                <form onSubmit={handleSubmit(onSubmit)}>

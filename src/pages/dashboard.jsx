@@ -1,25 +1,24 @@
 import * as React from 'react'
 import { authOptions } from './api/auth/[...nextauth]'
 import { unstable_getServerSession as getServerSession } from 'next-auth'
-import { useHydratedSession } from '@/utils/customHooks'
+import { useHydratedSession } from '../utils/customHooks'
 import Link from 'next/link'
 import Image from 'next/image'
-import axios from 'axios'
+import apiClient from '../utils/axios'
 
-import { FunFacts } from '@/components/FunFacts'
-import { Header } from '@/components/layout/Header'
-import { Title } from '@/components/Title'
-import { FullWidthLayout } from '@/components/layout/FullWidthLayout'
-import { Button } from '@/components/ui/Button'
+import { FunFacts } from '../components/FunFacts'
+import { Header } from '../components/layout/Header'
+import { Title } from '../components/Title'
+import { FullWidthLayout } from '../components/layout/FullWidthLayout'
+import { Button } from '../components/ui/Button'
 
-import bgGreenIMG from '@/images/backgrounds/home-green-bg.svg'
-import bgYellowIMG from '@/images/backgrounds/home-yellow-bg.svg'
-import mrTerraInWasteIMG from '@/images/mrterra/mr.t-in-waste.svg'
-import peculiarPeach from '@/images/images/onboarding-home-peculiar-peach.svg'
-import perfectPeach from '@/images/images/onboarding-home-perfect-peach.svg'
-import lemonIMG from '@/images/illustrations/home-lemon-rotated.svg'
-import coinIMG from '@/images/illustrations/home-acc-community-coin.svg'
-import { FunFactsModal } from '@/components/Modal/FunFactsModal'
+import bgGreenIMG from '../../public/images/backgrounds/home-green-bg.svg'
+import bgYellowIMG from '../../public/images/backgrounds/home-yellow-bg.svg'
+import mrTerraInWasteIMG from '../../public/images/mrterra/mr.t-in-waste.svg'
+import peculiarPeach from '../../public/images/images/onboarding-home-peculiar-peach.svg'
+import perfectPeach from '../../public/images/images/onboarding-home-perfect-peach.svg'
+import lemonIMG from '../../public/images/illustrations/home-lemon-rotated.svg'
+import coinIMG from '../../public/images/illustrations/home-acc-community-coin.svg'
 
 export default function Dashboard({ facts }) {
    const session = useHydratedSession()
@@ -27,7 +26,7 @@ export default function Dashboard({ facts }) {
 
    return (
       <>
-         <Title variant="h1" className="text-primary mt-5 px-8">
+         <Title variant="h1" className=" mt-5 px-8 text-blue-dark">
             Welcome, {session?.user?.name}
          </Title>
          <Title variant="h2" className="mt-4 px-8">
@@ -82,7 +81,7 @@ export default function Dashboard({ facts }) {
                scarring) and no clear signs of spoilage.
             </p>
             <div className="grid grid-cols-2 mt-6 pb-12">
-               <div className="flex flex-col items-center">
+               <div className="flex flex-col items-center justify-end">
                   <Image
                      alt='"Perfect Peach"'
                      src={perfectPeach}
@@ -91,7 +90,7 @@ export default function Dashboard({ facts }) {
                   />
                   <p>"Perfect" Peach</p>
                </div>
-               <div className="flex flex-col items-center">
+               <div className="flex flex-col items-center justify-end">
                   <Image
                      alt="Peculiar Peach"
                      src={peculiarPeach}
@@ -103,10 +102,10 @@ export default function Dashboard({ facts }) {
             </div>
          </div>
          <div className="bg-tertiary text-white px-8 relative pb-8">
-            <Title variant="h2" className="pt-7">
+            <Title variant="h2" className="pt-12">
                Terra's Reward System{' '}
             </Title>
-            <ul className="p-2">
+            <ul className="p-2 pl-0">
                <li className="grid grid-cols-8 items-center">
                   <div className="mr-3 col-span-1 flex items-center justify-center">
                      <Image alt="bullet" src={coinIMG} height={32} width={32} />
@@ -176,7 +175,7 @@ Dashboard.getLayout = function getLayout(page) {
 }
 
 export async function getServerSideProps(context) {
-   const { data } = await axios.get(`http://localhost:3000/api/funfacts`)
+   const { data } = await apiClient.get(`/api/funfacts`)
 
    const session = await getServerSession(context.req, context.res, authOptions)
 

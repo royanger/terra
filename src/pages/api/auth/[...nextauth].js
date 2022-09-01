@@ -3,7 +3,7 @@ import FacebookProvider from 'next-auth/providers/facebook'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { db } from '@/utils/db.server'
+import { db } from '../../../utils/db.server'
 import { z } from 'zod'
 import bcrypt from 'bcrypt'
 
@@ -14,6 +14,7 @@ export const authOptions = {
    pages: {
       signIn: '/auth/login',
    },
+   // TODO not returning the ID. Maybe revisit this
    callbacks: {
       callbacks: {
          session({ session, user }) {
@@ -21,6 +22,12 @@ export const authOptions = {
                session.user.id = user.id
             }
             return session
+         },
+         jwt: async ({ user, token }) => {
+            if (user) {
+               token.uid = user.id
+            }
+            return token
          },
       },
    },

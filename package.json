@@ -10,6 +10,7 @@
       "analyze": "cross-env ANALYZE=true next build",
       "analyze:server": "cross-env ANALYZE=server next build",
       "analyze:browser": "cross-env ANALYZE=browser next build",
+      "seed:facts": "node prisma/seed/facts.js",
       "migrate": "npx prisma migrate dev"
    },
    "repository": {

@@ -1,6 +1,7 @@
-import { Layout } from '@/components/layout/Layout'
-import { Title } from '@/components/Title'
-import { Header } from '@/components/layout/Header'
+import { Layout } from '../../components/layout/Layout'
+import { Title } from '../../components/Title'
+import { Header } from '../../components/layout/Header'
+
 
 export default function PrivacyPolicy() {
    return (

@@ -1,5 +1,5 @@
-import { Title } from '@/components/Title'
-import { Layout } from '@/components/layout/Layout'
+import { Title } from '../components/Title'
+import { Layout } from '../components/layout/Layout'
 import Link from 'next/link'
 
 export default function AboutUs() {
