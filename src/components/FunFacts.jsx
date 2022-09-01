@@ -39,7 +39,12 @@ export const FunFacts = ({ data }) => {
          </div>
 
          {showModal && (
-            <FunFactsModal showModal={showModal} setShowModal={setShowModal} />
+            <FunFactsModal
+               description={currentFact.details}
+               href={currentFact.href}
+               id={currentFact.id}
+               setShowModal={setShowModal}
+            />
          )}
       </>
    )

@@ -26,7 +26,7 @@ export default function Dashboard({ facts }) {
 
    return (
       <>
-         <Title variant="h1" className="text-primary mt-5 px-8">
+         <Title variant="h1" className=" mt-5 px-8 text-blue-dark">
             Welcome, {session?.user?.name}
          </Title>
          <Title variant="h2" className="mt-4 px-8">
