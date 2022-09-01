@@ -29,7 +29,7 @@ const run = async () => {
                   details:
                      "A lot of the food we throw away is edible. Meanwhile, approximately 4-10% of food from kitchens in restaurants ends up as pre-consumer waste. For instance, McDonald's says its employees must dump all fries in the trash can after 7 minutes, while they must discard burgers after 20 mins.",
                   reference: 'NRDC',
-                  href: 'https://www.nrdc.org/sites/default/files/food-waste-city-level-report.pdf/updates.panda.org/driven-to-waste-report',
+                  href: 'https://www.nrdc.org/sites/default/files/food-matters-ib.pdf',
                },
                {
                   message:

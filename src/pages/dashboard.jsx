@@ -4,7 +4,7 @@ import { unstable_getServerSession as getServerSession } from 'next-auth'
 import { useHydratedSession } from '../utils/customHooks'
 import Link from 'next/link'
 import Image from 'next/image'
-import axios from 'axios'
+import apiClient from '../utils/axios'
 
 import { FunFacts } from '../components/FunFacts'
 import { Header } from '../components/layout/Header'
@@ -175,7 +175,7 @@ Dashboard.getLayout = function getLayout(page) {
 }
 
 export async function getServerSideProps(context) {
-   const { data } = await axios.get(`http://localhost:3000/api/funfacts`)
+   const { data } = await apiClient.get(`/api/funfacts`)
 
    const session = await getServerSession(context.req, context.res, authOptions)
 
