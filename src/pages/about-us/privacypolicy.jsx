@@ -1,7 +1,7 @@
 import { Layout } from '../../components/layout/Layout'
 import { Title } from '../../components/Title'
 import { Header } from '../../components/layout/Header'
-
+import { Footer } from '../../components/layout/Footer'
 
 export default function PrivacyPolicy() {
    return (
@@ -148,6 +148,7 @@ PrivacyPolicy.getLayout = function getLayout(page) {
          <Layout>
             <Header />
             {page}
+            <Footer />
          </Layout>
       </>
    )
