@@ -40,7 +40,7 @@ export const FunFactsModal = ({ href, description, id, setShowModal }) => {
                   <Image src={congratsIMG} alt="You got an award!" />
                </div>
                <Title variant="h1" className="text-primary text-center">
-                  Congratulations
+                  Congratulations!
                </Title>
                <p className="mt-2 text-center">
                   Woo hoo, you've earned 1 point. Keep it up to rescue Mister

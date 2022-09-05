@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { authOptions } from './api/auth/[...nextauth]'
 import { unstable_getServerSession as getServerSession } from 'next-auth'
 import { useHydratedSession } from '../utils/customHooks'
@@ -22,7 +21,6 @@ import coinIMG from '../../public/images/illustrations/home-acc-community-coin.s
 
 export default function Dashboard({ facts }) {
    const session = useHydratedSession()
-   const [showModal, setShowModal] = React.useState(false)
 
    return (
       <>
@@ -33,7 +31,7 @@ export default function Dashboard({ facts }) {
             Some food for thought:
          </Title>
          <div className="px-8">
-            <FunFacts data={facts} setShowModal={setShowModal} />
+            <FunFacts data={facts} />
          </div>
 
          <div
@@ -135,29 +133,6 @@ export default function Dashboard({ facts }) {
             <div className="absolute top-[-75px] right-0">
                <Image alt="A peculiar lemon" src={lemonIMG} />
             </div>
-         </div>
-
-         <div>
-            <ul className="mt-5">
-               <li>
-                  <Title variant="h2">Menu asdf</Title>
-               </li>
-               <li>
-                  <Link href="/account">My Account</Link>
-               </li>
-               <li>
-                  <Link href="/donate">Donate</Link>
-               </li>
-               <li>
-                  <Link href="community">Community</Link>
-               </li>
-               <li>
-                  <Link href="harvest-board">Harvest Board</Link>
-               </li>
-               <li>
-                  <Link href="about-us">About Us</Link>
-               </li>
-            </ul>
          </div>
       </>
    )

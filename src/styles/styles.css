@@ -64,6 +64,51 @@ body {
    right: 0;
 }
 
+@media screen and (min-width: 768px) {
+   .terra-landing-hero {
+      background-image: url('/images/desktop-images/landing/produce-background-cropped.png');
+   }
+}
+
+/* Grid hacks for the landing page */
+.terra-works {
+   grid-template-areas:
+      'title title title mrterra mrterra mrterra'
+      'content content content content content content'
+      'leftarrow leftarrow dots dots rightarrow rightarrow';
+}
+@media screen and (min-width: 768px) {
+   .terra-works {
+      grid-template-areas:
+         'title title title mrterra mrterra mrterra'
+         'content content content content content content'
+         'leftarrow dots dots dots dots rightarrow';
+   }
+}
+@media screen and (min-width: 1024px) {
+   .terra-works {
+      grid-template-areas:
+         'title title title title mrterra mrterra mrterra null'
+         'leftarrow content content content content content content rightarrow'
+         'dots dots dots dots dots dots dots dots';
+   }
+}
+.terra-works .title {
+   grid-area: title;
+}
+.terra-works .mrterra {
+   grid-area: mrterra;
+}
+.terra-works .content {
+   grid-area: content;
+}
+.terra-works .leftarrow {
+   grid-area: leftarrow;
+}
+.terra-works .rightarrow {
+   grid-area: rightarrow;
+}
+
 /* Loader CSS */
 .terra-ring div {
    width: calc(80px * var(--newSize));

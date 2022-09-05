@@ -2,6 +2,7 @@ import { SessionProvider } from 'next-auth/react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import '../styles/styles.css'
+export { reportWebVitals } from 'next-axiom'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
    const queryclient = new QueryClient({

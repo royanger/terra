@@ -19,6 +19,10 @@ module.exports = {
          width: {
             logo: '108px',
          },
+         screens: {
+            '3xl': '2000px',
+         },
+
          maxWidth: {
             sm: '390px',
          },

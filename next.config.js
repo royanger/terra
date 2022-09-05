@@ -1,3 +1,5 @@
+const { withAxiom } = require('next-axiom')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    reactStrictMode: true,
@@ -8,4 +10,4 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
    enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withBundleAnalyzer(nextConfig)
+module.exports = withAxiom(withBundleAnalyzer(nextConfig))

@@ -4,7 +4,7 @@ class MyDocument extends Document {
       return (
          <Html lang="en">
             <Head />
-            <body>
+            <body className="bg-white">
                <Main />
                <NextScript />
                <div id="portal2"></div>

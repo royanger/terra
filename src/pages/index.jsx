@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { LoginComponent } from '../components/ui/login-btn'
 import { Title } from '../components/Title'
-// import { useQuery } from '..tanstack/react-query';
-// import axios from 'axios';
+
 import { Header } from '../components/layout/Header'
-import { Layout } from '../components/layout/Layout'
 import Link from 'next/link'
+import { Slider } from '../components/Slider'
+
+import heroIMG from '../../public/images/desktop-images/landing/produce-background-cropped.png'
 
 export default function Home() {
    return (
@@ -17,46 +18,28 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
          </Head>
 
-         <main>
-            <Header />
-            <Title variant="h1" className="text-primary">
-               Replenish the earth, one grocery trip at a time.
-            </Title>
-
-            <Title variant="h2">
-               From farm to table, we want all produce to be loved and used.
-            </Title>
-
-            <div className="flex flex-row">
-               <img
-                  src="https://i.imgur.com/d2AchLm.png"
-                  alt="Man on the phone"
-                  className="w-16"
-               />
-
-               <p>Capture your peculiar produce.</p>
+         <main className="bg-white mt-20 md:mt-0 flex flex-col items-center">
+            <div className="max-w-[1440px] w-full">
+               <div className="terra-landing-hero w-full md:min-h-[80vh] bg-contain bg-right-bottom bg-no-repeat flex flex-col justify-center border-2 border-secondary">
+                  <div className="border-2 border-error md:top-[-200px] lg:top-0 3xl:top-[-250px] relative px-6 md:px-[84px] w-full lg:w-3/5">
+                     <Title
+                        variant="h1"
+                        className="text-primary md:text-[56px]"
+                     >
+                        Replenish the earth, one action at a time.
+                     </Title>
+                     <p className="md:text-xl">
+                        From farm to table, we want all produce to be loved and
+                        used.
+                     </p>
+                  </div>
+               </div>
+               <Slider />
             </div>
-            <div className="flex flex-row-reverse">
-               <img
-                  src="https://i.imgur.com/pt89UKR.png"
-                  alt="Coin in hand"
-                  className="w-16"
-               />
-               <p>Buy your peculiar produce and get rewarded.</p>
+
+            <div className="mt-32 mb-48">
+               <LoginComponent />
             </div>
-            <div className="flex flex-row">
-               <img
-                  src="https://i.imgur.com/eYZ2JPj.png"
-                  alt="Girl pointing"
-                  className="w-16"
-               />
-               <p>Compete with other Terrarians and be featured.</p>
-            </div>
-            <Link href="/auth/register">
-               <button>Join Now</button>
-            </Link>
-            <p>Have an account?</p>
-            <LoginComponent />
          </main>
       </div>
    )
@@ -65,7 +48,8 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
    return (
       <>
-         <Layout>{page}</Layout>
+         <Header />
+         {page}
       </>
    )
 }

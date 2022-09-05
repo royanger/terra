@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react'
 export const Header = () => {
    return (
       <>
-         <div className="flex items-center justify-center relative">
+         <div className="flex items-center justify-center relative bg-white border-b-2 border-purple-900">
             <div className="absolute left-3">
                <Icon icon="charm:menu-hamburger" className="w-6 h-6" />
             </div>
