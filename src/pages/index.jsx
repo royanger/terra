@@ -8,6 +8,13 @@ import Link from 'next/link'
 import { Slider } from '../components/Slider'
 
 import heroIMG from '../../public/images/desktop-images/landing/produce-background-cropped.png'
+import yellowCurveIMG from '../../public/images/desktop-images/landing/yellow-curve.svg'
+import greenCurveIMG from '../../public/images/backgrounds/onboarding-green-bg.svg'
+import brownCurveIMG from '../../public/images/desktop-images/landing/brown-curve.svg'
+import peculiarPeachIMG from '../../public/images/images/onboarding-home-peculiar-peach.svg'
+import perfectPeachIMG from '../../public/images/images/onboarding-home-perfect-peach.svg'
+import mrterraIMG from '../../public/images/desktop-images/landing/mrterra.svg'
+import squiggleIMG from '../../public/images/desktop-images/landing/stats-squiggle.svg'
 
 export default function Home() {
    return (
@@ -19,7 +26,7 @@ export default function Home() {
          </Head>
 
          <main className="bg-white mt-20 md:mt-0 flex flex-col items-center">
-            <div className="max-w-[1440px] w-full">
+            <div className="max-w-[1440px] w-full relative">
                <div className="terra-landing-hero w-full md:min-h-[80vh] bg-contain bg-right-bottom bg-no-repeat flex flex-col justify-center border-2 border-secondary">
                   <div className="border-2 border-error md:top-[-200px] lg:top-0 3xl:top-[-250px] relative px-6 md:px-[84px] w-full lg:w-3/5">
                      <Title
@@ -34,9 +41,104 @@ export default function Home() {
                      </p>
                   </div>
                </div>
-               <Slider />
-            </div>
 
+               <div
+                  className=" bg-contain bg-no-repeat bg-bottom  top-[100px]"
+                  style={{ backgroundImage: `url(${yellowCurveIMG.src})` }}
+               >
+                  <Slider />
+               </div>
+               <div className="bg-tan px-8 md:px-16 pt-32 grid grid-cols-0 md: grid-cols-3">
+                  <div className="col-span-1 md:col-span-2">
+                     <Title variant="h2" className="md:text-[32px]">
+                        You may ask... what makes produce “peculiar”?
+                     </Title>
+                     <p className="md:text-xl mt-11">
+                        At Terra, we define “peculiar produce” as fruits and
+                        vegetable that have obvious cosmetic quirks (odd shapes,
+                        blemishes, scarring) and no clear signs of spoilage.
+                     </p>
+                  </div>
+
+                  <div className="flex flex-row justify-center gap-8 mt-6 pb-12">
+                     <div className="flex flex-col items-center justify-end">
+                        <Image
+                           alt='"Perfect Peach"'
+                           src={perfectPeachIMG}
+                           height={114}
+                           width={114}
+                        />
+                        <p className="md:text-xl">"Perfect" Peach</p>
+                     </div>
+                     <div className="flex flex-col items-center justify-end">
+                        <Image
+                           alt="Peculiar Peach"
+                           src={peculiarPeachIMG}
+                           height={105}
+                           width={107}
+                        />
+                        <p className="md:text-xl">Peculiar Peach</p>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  className="h-32 bg-contain bg-repeat-xbg-bottom bg-tan"
+                  style={{ backgroundImage: `url(${greenCurveIMG.src})` }}
+               ></div>
+               <div className="bg-primary text-white">
+                  <Title variant="h2">Why save peculiar produce?</Title>
+                  <p>
+                     Our “beauty” standards for fruits and veggies have
+                     far-reaching environmental implications.
+                  </p>
+
+                  <div className="grid grid-cols-2">
+                     <div>
+                        <p>22%</p>
+                        <p>
+                           Food is the single largest component taking up space
+                           inside US landfills, making up 22% of municipal solid
+                           waste (MSW).
+                        </p>
+                     </div>
+                     <div>
+                        <p>20%</p>
+                        <p>
+                           Of produce or more gets thrown out for cosmetic
+                           reasons, such as having weird shapes, odd colors, and
+                           blemishes.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  className="h-[200px] bg-contain bg-no-repeat bg-bottom bg-primary"
+                  style={{ backgroundImage: `url(${brownCurveIMG.src})` }}
+               ></div>
+               <div className="bg-tertiary text-white">
+                  <div className="grid grid-cols-2">
+                     <div>
+                        <Image
+                           alt="Mr Terra"
+                           src={mrterraIMG}
+                           height={105}
+                           width={107}
+                        />
+                     </div>
+                     <div>
+                        <Title variant="h2">
+                           Join a community that embraces peculiar produce and
+                           start reducing food waste today.
+                        </Title>
+                        <p>
+                           Visit us on your phone for the best experience. We’ll
+                           be expanding to a desktop version soon, so look out
+                           for updates!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div className="mt-32 mb-48">
                <LoginComponent />
             </div>
