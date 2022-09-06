@@ -109,6 +109,28 @@ body {
    grid-area: rightarrow;
 }
 
+.terra-produce {
+   display: grid;
+   grid-template-columns: 108px 1fr;
+   gap: 16px;
+}
+@media screen and (min-width: 768px) {
+   .terra-produce {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+   }
+}
+
+.terra-brown-curve {
+   background-image: url('/images/desktop-images/landing/mobile-brown-curve.svg');
+}
+@media screen and (min-width: 768px) {
+   .terra-brown-curve {
+      background-image: url('/images/desktop-images/landing/brown-curve.svg');
+   }
+}
+
 /* Loader CSS */
 .terra-ring div {
    width: calc(80px * var(--newSize));

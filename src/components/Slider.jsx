@@ -67,8 +67,8 @@ const SlideTwo = () => {
             <Image
                alt="Produce art over a star"
                src="/images/desktop-images/landing/card-produce.svg"
-               width={155}
-               height={150}
+               width={206}
+               height={200}
             />
          </div>
          <div className="col-span-3 lg:hidden flex items-center ml-4">
@@ -95,8 +95,8 @@ const SlideThree = () => {
             <Image
                alt="Shopper using the app to learn"
                src="/images/desktop-images/landing/card-torso.svg"
-               width={173}
-               height={150}
+               width={230}
+               height={200}
             />
          </div>
          <div className="col-span-3 lg:hidden flex items-center ml-4">
@@ -124,7 +124,7 @@ const LandingCards = ({ slide, slides }) => {
    const Slide = slides[slide]
 
    return (
-      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[130px] lg:min-h-[330px]">
+      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[205px] lg:min-h-[330px]">
          <Slide />
       </div>
    )

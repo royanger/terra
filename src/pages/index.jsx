@@ -9,7 +9,6 @@ import { Slider } from '../components/Slider'
 
 import heroIMG from '../../public/images/desktop-images/landing/produce-background-cropped.png'
 import yellowCurveIMG from '../../public/images/desktop-images/landing/yellow-curve.svg'
-import greenCurveIMG from '../../public/images/backgrounds/onboarding-green-bg.svg'
 import brownCurveIMG from '../../public/images/desktop-images/landing/brown-curve.svg'
 import peculiarPeachIMG from '../../public/images/images/onboarding-home-peculiar-peach.svg'
 import perfectPeachIMG from '../../public/images/images/onboarding-home-perfect-peach.svg'
@@ -48,8 +47,8 @@ export default function Home() {
                >
                   <Slider />
                </div>
-               <div className="bg-tan px-8 md:px-16 pt-32 grid grid-cols-0 md: grid-cols-3">
-                  <div className="col-span-1 md:col-span-2">
+               <div className="bg-tan px-8 md:px-16 pt-32 grid grid-cols-1 lg:grid-cols-3 pb-12">
+                  <div className="col-span-1 lg:col-span-2">
                      <Title variant="h2" className="md:text-[32px]">
                         You may ask... what makes produce “peculiar”?
                      </Title>
@@ -60,7 +59,7 @@ export default function Home() {
                      </p>
                   </div>
 
-                  <div className="flex flex-row justify-center gap-8 mt-6 pb-12">
+                  <div className="flex flex-row justify-center gap-8 mt-6 ">
                      <div className="flex flex-col items-center justify-end">
                         <Image
                            alt='"Perfect Peach"'
@@ -81,42 +80,68 @@ export default function Home() {
                      </div>
                   </div>
                </div>
-               <div
-                  className="h-32 bg-contain bg-repeat-xbg-bottom bg-tan"
-                  style={{ backgroundImage: `url(${greenCurveIMG.src})` }}
-               ></div>
-               <div className="bg-primary text-white">
-                  <Title variant="h2">Why save peculiar produce?</Title>
-                  <p>
+
+               <div className="bg-tan px-8 md:px-16">
+                  <Title variant="h2" className="md:text-[32px]">
+                     Why save peculiar produce?
+                  </Title>
+                  <p className="md:text-xl mt-2">
                      Our “beauty” standards for fruits and veggies have
                      far-reaching environmental implications.
                   </p>
+                  <div className="flex justify-center ">
+                     <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 lg:gap-40 max-w-[800px]">
+                        <div className="terra-produce mt-6">
+                           <div className="flex items-center justify-center flex-col w-min-[108px]">
+                              <p className="font-epilogue text-5xl md:text-[100px]">
+                                 20%
+                              </p>
+                              <Image
+                                 src={squiggleIMG}
+                                 alt="Decoration image"
+                                 width={295}
+                                 height={24}
+                              />
+                           </div>
 
-                  <div className="grid grid-cols-2">
-                     <div>
-                        <p>22%</p>
-                        <p>
-                           Food is the single largest component taking up space
-                           inside US landfills, making up 22% of municipal solid
-                           waste (MSW).
-                        </p>
-                     </div>
-                     <div>
-                        <p>20%</p>
-                        <p>
-                           Of produce or more gets thrown out for cosmetic
-                           reasons, such as having weird shapes, odd colors, and
-                           blemishes.
-                        </p>
+                           <div className="col-span-1">
+                              <p>
+                                 Of produce or more gets thrown out for cosmetic
+                                 reasons, such as having weird shapes, odd
+                                 colors, and blemishes.
+                              </p>
+                           </div>
+                        </div>
+                        <div className="terra-produce mt-6">
+                           <div className="flex items-center justify-center flex-col w-min-[108px]">
+                              <p className="font-epilogue text-5xl md:text-[100px]">
+                                 22%
+                              </p>
+                              <Image
+                                 src={squiggleIMG}
+                                 alt="Decoration image"
+                                 width={295}
+                                 height={24}
+                              />
+                           </div>
+
+                           <div className="col-span-1">
+                              <p>
+                                 Food is the single largest component taking up
+                                 space inside US landfills, making up 22% of
+                                 municipal solid waste (MSW).
+                              </p>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
                <div
-                  className="h-[200px] bg-contain bg-no-repeat bg-bottom bg-primary"
-                  style={{ backgroundImage: `url(${brownCurveIMG.src})` }}
+                  className="terra-brown-curve h-[200px] bg-contain bg-no-repeat bg-bottom bg-tan"
+                  // style={{ backgroundImage: `url(${brownCurveIMG.src})` }}
                ></div>
-               <div className="bg-tertiary text-white">
-                  <div className="grid grid-cols-2">
+               <div className="bg-tertiary text-white px-8 md:px-16">
+                  <div className="flex gap-4 md:gap-16 pb-28">
                      <div>
                         <Image
                            alt="Mr Terra"
@@ -126,12 +151,16 @@ export default function Home() {
                         />
                      </div>
                      <div>
-                        <Title variant="h2">
+                        <Title variant="h2" className="hidden md:block mb-7">
                            Join a community that embraces peculiar produce and
                            start reducing food waste today.
                         </Title>
-                        <p>
-                           Visit us on your phone for the best experience. We’ll
+                        <p className="md:hidden">
+                           Join a community that embraces peculiar produce and
+                           start reducing food waste today.
+                        </p>
+                        <p className="hidden md:block">
+                           Visit us on your phone for the best experience. We'll
                            be expanding to a desktop version soon, so look out
                            for updates!
                         </p>
