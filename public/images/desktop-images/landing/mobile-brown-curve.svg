@@ -1,4 +1,8 @@
-<svg width="390" height="74" viewBox="0 0 390 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M198.288 20.0314C273.152 56.3102 357.289 35.1475 390 20.0314V73.1539H-3.05176e-05V20.0314C34.9027 4.91523 123.424 -16.2474 198.288 20.0314Z" fill="#533F2C"/>
-<path d="M390 30.9894C358.46 45.5041 276.655 66.3471 201.759 33.6021C108.139 -7.32926 48.5623 18.3617 2.00272e-05 30.9894" stroke="#FFC635" stroke-width="2"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 390 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1.01157,0,2.58236e-08)">
+        <path d="M198.288,20.031C273.152,56.31 357.289,35.148 390,20.031L390,73.154L-0,73.154L-0,20.031C34.903,4.915 123.424,-16.247 198.288,20.031Z" style="fill:rgb(83,63,44);fill-rule:nonzero;"/>
+    </g>
+    <path d="M390,30.989C358.46,45.504 276.655,66.347 201.759,33.602C108.139,-7.329 48.562,18.362 0,30.989" style="fill:none;fill-rule:nonzero;stroke:rgb(255,198,53);stroke-width:2px;"/>
 </svg>

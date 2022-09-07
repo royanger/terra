@@ -13,18 +13,18 @@ export const Button = ({
       primary:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       secondary:
-         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
+         'border border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       questionnaire:
-         'border-[1px] border-black hover:border-primary hover:bg-primary hover:text-white py-[11px]',
+         'border border-black hover:border-primary hover:bg-primary hover:text-white py-[11px]',
       primaryShort:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%] w-[100px]',
       secondaryShort:
-         'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]  w-[100x]',
+         'border border-black hover:border-tertiary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]  w-[100x]',
       donate:
          'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
       modal: 'bg-secondary hover:bg-tertiary hover:text-white font-semibold text-[1.125rem]  leading-[156%]',
-      left: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
-      right: 'border-[1px] border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
+      left: 'border border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
+      right: 'border border-black hover:border-tertiary hover:bg-tertiary hover:text-white py-2.5 bg-white',
       modalleft: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
       modalright: 'bg-secondary hover:bg-tertiary hover:text-white py-2.5',
    }

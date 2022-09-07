@@ -73,7 +73,7 @@ body {
 /* Grid hacks for the landing page */
 .terra-works {
    grid-template-areas:
-      'title title title mrterra mrterra mrterra'
+      'title title title title mrterra mrterra'
       'content content content content content content'
       'leftarrow leftarrow dots dots rightarrow rightarrow';
 }

@@ -124,7 +124,7 @@ const LandingCards = ({ slide, slides }) => {
    const Slide = slides[slide]
 
    return (
-      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[205px] lg:min-h-[330px]">
+      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[155px] md:min-h-[210px] lg:min-h-[330px]">
          <Slide />
       </div>
    )
@@ -212,11 +212,14 @@ export const Slider = () => {
                as="image"
             />
          </Head>
-         <div className="terra-works grid grid-cols-6 lg:grid-cols-8 max-w-[1440px] mx-8 md:mx-16 lg:mx-0">
-            <div className="title flex items-end col-span-3 lg:col-span-4">
+         <div className="terra-works grid grid-cols-6 lg:grid-cols-8 max-w-[1440px] mx-8 md:mx-16 lg:mx-0  mt-3 md:mt-0">
+            <div className="title flex flex-col">
+               <p className="md:hidden grow">
+                  From farm to table, we want all produce to be loved and used.
+               </p>
                <Title
                   variant="h2"
-                  className="lg:text-[32px] lg:ml-[84px] mb-4 lg:mn-8"
+                  className="lg:text-[32px] lg:ml-[84px] mb-4 lg:mb-8"
                >
                   How Terra Works
                </Title>

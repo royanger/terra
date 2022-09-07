@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import { LoginComponent } from '../components/ui/login-btn'
 import { Title } from '../components/Title'
-
 import { Header } from '../components/layout/Header'
-import Link from 'next/link'
 import { Slider } from '../components/Slider'
+import { Button } from '../components/ui/Button'
 
-import heroIMG from '../../public/images/desktop-images/landing/produce-background-cropped.png'
 import yellowCurveIMG from '../../public/images/desktop-images/landing/yellow-curve.svg'
-import brownCurveIMG from '../../public/images/desktop-images/landing/brown-curve.svg'
 import peculiarPeachIMG from '../../public/images/images/onboarding-home-peculiar-peach.svg'
 import perfectPeachIMG from '../../public/images/images/onboarding-home-perfect-peach.svg'
 import mrterraIMG from '../../public/images/desktop-images/landing/mrterra.svg'
@@ -26,28 +25,41 @@ export default function Home() {
 
          <main className="bg-white mt-20 md:mt-0 flex flex-col items-center">
             <div className="max-w-[1440px] w-full relative">
-               <div className="terra-landing-hero w-full md:min-h-[80vh] bg-contain bg-right-bottom bg-no-repeat flex flex-col justify-center border-2 border-secondary">
-                  <div className="border-2 border-error md:top-[-200px] lg:top-0 3xl:top-[-250px] relative px-6 md:px-[84px] w-full lg:w-3/5">
+               <div className="terra-landing-hero w-full md:min-h-[60vh] lg:min-h-[80vh] bg-contain bg-right-bottom bg-no-repeat flex flex-col justify-center">
+                  <div className="md:top-[-200px] lg:top-[-100px] 3xl:top-[-250px] relative px-6 md:px-[84px] w-full lg:w-4/5 xl:w-3/5">
                      <Title
                         variant="h1"
                         className="text-primary md:text-[56px]"
                      >
                         Replenish the earth, one action at a time.
                      </Title>
-                     <p className="md:text-xl">
+                     <p className="md:text-xl hidden md:block">
                         From farm to table, we want all produce to be loved and
                         used.
                      </p>
                   </div>
                </div>
 
-               <div
-                  className=" bg-contain bg-no-repeat bg-bottom  top-[100px]"
-                  style={{ backgroundImage: `url(${yellowCurveIMG.src})` }}
-               >
-                  <Slider />
+               <Slider />
+
+               <div className="flex flex-col items-center px-8 mt-8 mb-3">
+                  <Link href="/auth/register">
+                     <a className="block max-w-[324px] w-full mb-3">
+                        <Button variant="primary">Join now</Button>
+                     </a>
+                  </Link>
+                  <p>
+                     Have an account?{' '}
+                     <Link href="/auth/login">
+                        <a className="underline">Sign In</a>
+                     </Link>
+                  </p>
                </div>
-               <div className="bg-tan px-8 md:px-16 pt-32 grid grid-cols-1 lg:grid-cols-3 pb-12">
+               <div
+                  className=" bg-cover bg-no-repeat bg-bottom  h-[106px]"
+                  style={{ backgroundImage: `url(${yellowCurveIMG.src})` }}
+               ></div>
+               <div className="bg-tan px-8 md:pt-4 md:px-16 grid grid-cols-1 lg:grid-cols-3 pb-12">
                   <div className="col-span-1 lg:col-span-2">
                      <Title variant="h2" className="md:text-[32px]">
                         You may ask... what makes produce “peculiar”?
@@ -81,7 +93,7 @@ export default function Home() {
                   </div>
                </div>
 
-               <div className="bg-tan px-8 md:px-16">
+               <div className="bg-tan px-8 md:px-16 pb-8">
                   <Title variant="h2" className="md:text-[32px]">
                      Why save peculiar produce?
                   </Title>
@@ -136,18 +148,15 @@ export default function Home() {
                      </div>
                   </div>
                </div>
-               <div
-                  className="terra-brown-curve h-[200px] bg-contain bg-no-repeat bg-bottom bg-tan"
-                  // style={{ backgroundImage: `url(${brownCurveIMG.src})` }}
-               ></div>
+               <div className="terra-brown-curve h-[200px] bg-cover bg-no-repeat bg-bottom bg-tan"></div>
                <div className="bg-tertiary text-white px-8 md:px-16">
-                  <div className="flex gap-4 md:gap-16 pb-28">
-                     <div>
+                  <div className="flex gap-4 md:gap-16">
+                     <div className="min-w-[110px]">
                         <Image
                            alt="Mr Terra"
                            src={mrterraIMG}
-                           height={105}
-                           width={107}
+                           height={289}
+                           width={286}
                         />
                      </div>
                      <div>
@@ -165,6 +174,21 @@ export default function Home() {
                            for updates!
                         </p>
                      </div>
+                  </div>
+                  <div className="flex flex-col items-center px-8 mt-8 pb-8 md:pb-16">
+                     <Link href="/auth/register">
+                        <a className="block max-w-[324px] w-full mb-3">
+                           <Button variant="primary" css="text-tertiary">
+                              Join now
+                           </Button>
+                        </a>
+                     </Link>
+                     <p>
+                        Have an account?{' '}
+                        <Link href="/auth/login">
+                           <a className="underline">Sign In</a>
+                        </Link>
+                     </p>
                   </div>
                </div>
             </div>

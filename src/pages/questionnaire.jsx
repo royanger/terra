@@ -35,7 +35,7 @@ function Survey1({ register, getValues, setStep }) {
             </Title>
             <p>How often do you go grocery shopping?</p>
             <div className="form-control">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Once a day
                   </span>
@@ -47,7 +47,7 @@ function Survey1({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Once a week
                   </span>
@@ -59,7 +59,7 @@ function Survey1({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Once a month
                   </span>
@@ -71,7 +71,7 @@ function Survey1({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Once a year
                   </span>
@@ -122,7 +122,7 @@ function Survey2({ register, getValues, setStep }) {
                </p>
             </div>
             <div className="form-control">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full mt-4">
+               <label className="border border-black py-2 px-5 rounded-full mt-4">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      An excessive amount
                   </span>
@@ -134,7 +134,7 @@ function Survey2({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      More than you should
                   </span>
@@ -146,7 +146,7 @@ function Survey2({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      A reasonable amount
                   </span>
@@ -158,7 +158,7 @@ function Survey2({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      Very little
                   </span>
@@ -170,7 +170,7 @@ function Survey2({ register, getValues, setStep }) {
                </label>
             </div>
             <div className="form-control mt-4">
-               <label className="border-[1px] border-black py-2 px-5 rounded-full">
+               <label className="border border-black py-2 px-5 rounded-full">
                   <span className="text-[1.125rem] font-semibold flex items-center justify-center">
                      None
                   </span>
@@ -243,7 +243,7 @@ function Survey3({ register, getValues, setStep }) {
                </div>
                <div className="form-control">
                   <input
-                     className="shadow appearance-none border-[1px] border-black rounded-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
+                     className="shadow appearance-none border border-black rounded-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
                      {...register('foodwaste')}
                      type="text"
                      placeholder="e.g. bread"
