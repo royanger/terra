@@ -159,7 +159,7 @@ export default function Home() {
                            width={286}
                         />
                      </div>
-                     <div>
+                     <div className="flex flex-col justify-center">
                         <Title variant="h2" className="hidden md:block mb-7">
                            Join a community that embraces peculiar produce and
                            start reducing food waste today.

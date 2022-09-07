@@ -124,7 +124,7 @@ const LandingCards = ({ slide, slides }) => {
    const Slide = slides[slide]
 
    return (
-      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[155px] md:min-h-[210px] lg:min-h-[330px]">
+      <div className="content col-span-4 lg:col-span-6 bg-primary text-white rounded-3xl p-5 lg:p-4 lg:py-16 grid grid-cols-4 lg:grid-cols-3 min-h-[183px] md:min-h-[240px] lg:min-h-[330px]">
          <Slide />
       </div>
    )
