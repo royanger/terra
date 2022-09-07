@@ -1,11 +1,11 @@
 import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Layout } from '../../../components/ui/Layout'
+import { Layout } from '../../../components/layout/Layout'
 import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
 import { Title } from '../../../components/Title'
 import { Button } from '../../../components/ui/Button'
-import { Header2 } from '../../../components/layout/Header2'
+import { Header } from '../../../components/layout/Header'
 import { Footer } from '../../../components/layout/Footer'
 import successImg from '../../../../public/images/mrterra/mr.t-jumping.svg'
 import failImg from '../../../../public/images/mrterra/mr.t-saying-hi.svg'
@@ -16,7 +16,7 @@ export default function Verify(props) {
          <>
             <BackBreadcrumb href="/auth/login" />
             <div className="w-full flex justify-center mb-2">
-               <Image alt="Password Reset" src={successImg} />
+               <Image alt="Password Reset" src={failImg} />
             </div>
             <div className="w-full flex flex-col items-center mb-4">
                <Title variant="h1" className="text-error">
@@ -74,7 +74,7 @@ Verify.getLayout = function getLayout(page) {
    return (
       <>
          <Layout>
-            <Header2 />
+            <Header />
             {page}
             <Footer />
          </Layout>

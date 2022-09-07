@@ -36,16 +36,19 @@ model Session {
 }
 
 model User {
-  id              String    @id @default(cuid())
+  id              String         @id @default(cuid())
   name            String?
-  email           String?   @unique
+  email           String?        @unique
   emailVerified   DateTime?
   password        String?
   image           String?
+  points          Int            @default(0)
   accounts        Account[]
   sessions        Session[]
   token           Verification[]
   reset           Reset[]
+  readfact        ReadFact[]
+  pointslog       PointsLogs[]
 }
 
 model Verification {
@@ -60,4 +63,30 @@ model Reset {
    code        String   @unique
    userId       String
    user         User     @relation(fields: [userId], references: [id])
+}
+
+model Facts {
+   id          String   @id @default(cuid())
+   message     String
+   details     String
+   reference   String
+   href        String
+   readfact    ReadFact[]
+}
+
+model ReadFact {
+   id          String   @id @default(cuid())
+   factId      String
+   fact        Facts    @relation(fields:[factId], references: [id])
+   userId      String
+   user        User     @relation(fields:[userId], references: [id])
+}
+
+model PointsLogs {
+   id          String   @id @default(cuid())
+   userId      String
+   user        User     @relation(fields:[userId], references: [id])
+   points      Int
+   action      String
+   datetime    DateTime @default(now())
 }

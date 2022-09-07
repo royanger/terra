@@ -1,6 +1,5 @@
 export const Loader = ({ ratio, color = '#35572F' }) => {
    const newSize = ratio / 100
-   console.log('newSize', newSize)
    const cssValues = {
       '--newSize': newSize,
    }

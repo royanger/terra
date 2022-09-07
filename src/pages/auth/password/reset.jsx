@@ -8,10 +8,10 @@ import axios from 'axios'
 
 import { Input } from '../../../components/Input'
 import { Footer } from '../../../components/layout/Footer'
-import { Header2 } from '../../../components/layout/Header2'
+import { Header } from '../../../components/layout/Header'
 import { Title } from '../../../components/Title'
 import { Button } from '../../../components/ui/Button'
-import { Layout } from '../../../components/ui/Layout'
+import { Layout } from '../../../components/layout/Layout'
 import { Error } from '../../../components/ui/Error'
 import { BackBreadcrumb } from '../../../components/ui/BackBreadcrumb'
 
@@ -43,7 +43,6 @@ export default function ResetPassword() {
    const onSubmit = data => {
       resetMutation.mutate(data)
    }
-   // console.log('status', status?.)
 
    return (
       <>
@@ -66,7 +65,7 @@ export default function ResetPassword() {
          ) : (
             <>
                <p className="mb-4 text-center">
-                  Don’t worry! It happens. Please enter your email address
+                  Don't worry! It happens. Please enter your email address
                   associated with your account.
                </p>
                <form onSubmit={handleSubmit(onSubmit)}>
@@ -102,7 +101,7 @@ ResetPassword.getLayout = function getLayout(page) {
    return (
       <>
          <Layout>
-            <Header2 />
+            <Header />
             {page} <Footer />
          </Layout>
       </>
