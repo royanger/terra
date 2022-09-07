@@ -13,8 +13,22 @@ module.exports = {
             tan: '#FFF5DC',
          },
          fontFamily: {
-            epilogue: ['Epilogue', 'sans-serif'],
-            montserrat: ['Montserrat', 'sans-serif'],
+            epilogue: [
+               'Epilogue',
+               'Arial Black',
+               'Franklin Gothic Medium',
+               'Futura',
+               'Gill Sans',
+               'sans-serif',
+            ],
+            montserrat: [
+               'Montserrat',
+               'Avenir',
+               'Avenir Next',
+               'Calibri',
+               'Candara',
+               'sans-serif',
+            ],
          },
          width: {
             logo: '108px',
